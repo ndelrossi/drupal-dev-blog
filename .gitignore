@@ -3,3 +3,6 @@ docroot/files
 docroot/sites/*/files
 docroot/sites/*/private
 
+docroot/sites/*/settings*.php
+docroot/sites/*/services*.yml
+docroot/sites/simpletest
