@@ -1,0 +1,269 @@
+/**
+ * Responsive menu styles.
+ *
+ * Mixins provide the basic struture and a base style (not much), the rest
+ * is up to you, add colors, borders, padding and so on. Icons such as
+ * the hamburger and arrows are set in variables in _variables.scss, and you
+ * use the color varaibles for menus from there also.
+ *
+ * Menu styles are set in Appearance settings using the Responsive Menus extension.
+ * There you select a block, breakpoint, a default style and a responsive style.
+ * You can safely remove mixins from this file if you not going to use them later
+ * on, and want to save a few bytes in stylsheet size.
+ *
+ * Each mixin takes one or more parameters. Use these to customize the basic struture
+ * of the menu, or call options, for example you can place the offcanvas menu on the
+ * left or right.
+ *
+ * Do not import into breakpoints unless you are not using the Responsive Menu
+ * settings in Appearance Extensions, in which case you will need to load the
+ * at_core/at.responsivemenus library and provide it's required drupalSettings.
+ *
+ * Breakpoints are handled in matchMedia using Enquire.
+ *
+ * Responsive styles are a combination of three things:
+ *  1. Sass/CSS defined here (with breakpoints etc).
+ *  2. jQuery: responsive-menus.js in AT Core libraries which adds/toggles classes.
+ *  3. Theme settings as set in your themes Advanced extention settings.
+ ========================================================================== */
+
+// Tiles
+@include tiles($context: 12, $tile_count: 2, $arrows: false);
+
+// Overlay menu
+@include overlay($toggle_position: (vert: bottom, horz: right), $arrows: false);
+
+// Dropmenu
+@include dropmenu($item-width: 12em, $arrows: true);
+
+// Off canvas
+@include offcanvas($oc-position: left, $width: 15em, $arrows: false);
+
+// FlipSlide
+@include meganav($col-width: 12em, $arrows: false);
+
+// Slidedown (classic hamburger menu)
+@include slidedown($arrows: false);
+
+// Horizontal (plain hoz menu)
+@include horizontal($arrows: false);
+
+
+// Global styles for the navbar region.
+.rm-region {
+  padding: 0;
+  margin: 0;
+
+  // Visually hide contextual links, they can get in the way of responsive menu styles.
+  .contextual-region {
+    position: static;
+    .contextual {
+      @include visually-hidden;
+    }
+  }
+}
+
+
+// Remove any rounded corners applied to these menu styles.
+.ms-dropmenu,
+.ms-horizonal,
+.ms-offcanvas,
+.ms-meganav {
+  .rm-block .menu a {
+    //border-radius: 0 !important;
+  }
+}
+.ms-overlay .block__title {
+  //border-radius: 0 !important;
+}
+
+
+// Menu <a> bottom whitespace.
+.ms-offcanvas,
+.ms-slidedown {
+  .rm-block__content .menu a {
+    @include output-rhythm(margin-bottom, 2px);
+  }
+}
+
+
+// Mitigate any unwanted space in specific regions.
+.pr-navbar__navbar,
+.pr-leaderboard__leaderboard {
+  .rm-block {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+
+// Provide a consistant style for visible click handles.
+.rm-toggle  {
+  @include adjust-font-size-to($medium);
+  @include output-rhythm(padding, $xx-small $medium);
+  margin: 0;
+  cursor: pointer;
+
+  span {
+  }
+
+  &:after {
+    //cursor: pointer;
+  }
+}
+
+
+// Provide a reasonbly consistant menu style accross all menu types,
+// you may need to tweak some types due to the differences in layout
+// and overall design of the menu.
+.rm-block__content {
+  .menu {
+    position: relative;
+
+    > .menu-item {
+      z-index: 100;
+    }
+  }
+
+  .menu-item {
+    position: relative;
+    vertical-align: middle;
+    @include adjust-font-size-to($medium); // explicitly set the font-size since the container may be font-size 0
+
+    &.menu-item--active-trail > a {
+    }
+
+    // Strip border top from nested items.
+    &:first-child a {
+      border-top: 0;
+    }
+  }
+
+  a {
+    transition: $transition_global;
+    margin: 0;
+    border: 0;
+
+    &:after,
+    &:before {}
+
+    &:active {}
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+
+    &.active {
+      // Match Drupal base path for frontpage/home links
+      &[href="/"] {
+        &:hover,
+        &:focus {
+        }
+      }
+    }
+  }
+}
+
+
+// Customize responsive menus for this theme.
+.ms-dropmenu {
+  .rm-block__content {
+    a {
+      position: relative;
+      @include output-rhythm(padding, $xx-small $large);
+
+      &:after {
+        position: absolute;
+        @include output-rhythm(right, $medium); // LTR
+      }
+    }
+
+    .menu-item {
+      text-align: center;
+
+      &.menu-item--expanded li {
+        text-align: $flow-from; // LTR
+      }
+    }
+  }
+}
+
+
+.ms-horizontal {
+  .rm-block__content {
+    a {
+      @include output-rhythm(padding, $xx-small $large);
+
+      &:before,
+      &:after {
+        content: "";
+        float: none;
+        width: 0;
+        padding: 0;
+      }
+    }
+  }
+
+  // Header second specific styling.
+  .pr-header__header-second {
+    .menu {
+      float: #{$flow-to};
+    }
+  }
+}
+
+
+.ms-slidedown {
+  // Header second specific styling.
+  .pr-header__header-second {
+    .rm-toggle {
+      text-align: #{$flow-to};
+    }
+  }
+}
+
+
+
+
+
+.ms-offcanvas {
+  .rm-block__content {
+    display: none;
+    @include output-rhythm(padding, 0 0 $xx-small);
+  }
+
+  > .page,
+  .rm-block__content {
+    transition: $transition_global;
+  }
+}
+
+
+.ms-tiles {
+  .rm-block__content {
+    @include output-rhythm(padding, $xx-small 0);
+
+    .menu-level-1 {
+      > .menu-item {
+        @include output-rhythm(margin, $xx-small 0);
+      }
+    }
+  }
+}
+
+
+.ms-meganav {
+  &.rm-is-open {
+    .rm-block__content {
+      .menu-level-1 > .menu-item {
+
+        &:last-child {
+          border-bottom: none;
+        }
+
+        > a {}
+      }
+    }
+  }
+}

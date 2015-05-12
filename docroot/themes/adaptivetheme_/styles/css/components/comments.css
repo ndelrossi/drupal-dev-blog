@@ -1,0 +1,60 @@
+/**
+ * Comments
+ *  - comment field (holds comment title, form, comments etc)
+ *  - styles for comments
+ ========================================================================== */
+.field-type-comment {
+  clear: both;
+}
+.field-type-comment:before, .field-type-comment:after {
+  content: " ";
+  display: table;
+}
+.field-type-comment:after {
+  clear: both;
+}
+.field-type-comment .indented {
+  margin-left: 42px;
+  margin-left: 2.61803rem;
+}
+
+.comment:before, .comment:after {
+  content: " ";
+  display: table;
+}
+.comment:after {
+  clear: both;
+}
+
+.comment__meta {
+  margin: 16px 0;
+  margin: 1rem 0;
+}
+.comment__meta.comment__meta--has-user-picture {
+  line-height: 48px;
+  line-height: 3rem;
+}
+.comment__meta .field-type-image {
+  float: left;
+  margin: 0 11px 0 0;
+  margin: 0 0.69838rem 0 0;
+}
+.comment__meta .field-type-image img {
+  width: auto;
+  height: 48px;
+  height: 3rem;
+}
+.comment__meta .field-type-image__figure {
+  margin: 0;
+  padding: 0;
+}
+.comment__meta article:empty {
+  display: none;
+}
+
+.comment__author {
+  display: inline;
+  font-style: normal;
+}
+
+/*# sourceMappingURL=comments.css.map */

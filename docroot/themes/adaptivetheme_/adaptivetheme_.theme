@@ -1,0 +1,49 @@
+<?php
+
+/**
+ * Preprocess variables for html templates.
+ */
+/* -- Delete this line if you want to use this function
+function adaptivetheme__preprocess_html(&$variables) {
+}
+// */
+
+/**
+ * Preprocess variables for page templates.
+ */
+/* -- Delete this line if you want to use this function
+function adaptivetheme__preprocess_page(&$variables) {
+}
+// */
+
+/**
+ * Preprocess variables for field templates.
+ */
+/* -- Delete this line if you want to use this function
+function adaptivetheme__preprocess_field(&$variables) {
+}
+// */
+
+/**
+ * Preprocess variables for node templates.
+ */
+/* -- Delete this line if you want to use this function
+function adaptivetheme__preprocess_node(&$variables) {
+}
+// */
+
+/**
+ * Preprocess variables for comment templates.
+ */
+/* -- Delete this line if you want to use this function
+function adaptivetheme__preprocess_comment(&$variables) {
+}
+// */
+
+/**
+ * Preprocess variables for block templates.
+ */
+/* -- Delete this line if you want to use this function
+function adaptivetheme__preprocess_block(&$variables) {
+}
+// */

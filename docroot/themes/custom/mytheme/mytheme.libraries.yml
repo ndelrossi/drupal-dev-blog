@@ -1,0 +1,12 @@
+bootstrap:
+  version: 1.x
+  css:
+    theme:
+      css/bootstrap.min.css: {}
+  dependencies:
+    - core/jquery
+
+global-styling:
+  css:
+    theme:
+      css/style.css: {}

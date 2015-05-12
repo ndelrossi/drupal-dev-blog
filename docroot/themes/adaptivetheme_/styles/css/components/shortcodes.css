@@ -1,0 +1,590 @@
+@charset "UTF-8";
+/**
+ * Shortcodes
+ * Styles applied via AT Extension "Shortcodes", small snippets of CSS
+ * applied using classes added to various components via the appearance
+ * user interface (Appearance settings).
+ ========================================================================== */
+.ta-center,
+.ta-center * {
+  text-align: center;
+}
+
+.ta-left,
+.ta-left * {
+  text-align: left;
+}
+
+.ta-right,
+.ta-right * {
+  text-align: right;
+}
+
+.ta-justify
+.ta-justify * {
+  text-align: justify;
+}
+
+.center-element {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media all and (max-width: 60em) {
+  .pull-right,
+  [dir="rtl"] .pull-left {
+    float: right;
+  }
+
+  .pull-left,
+  [dir="rtl"] .pull-right {
+    float: left;
+  }
+
+  .lc-quarter {
+    width: 25%;
+  }
+
+  .lc-half {
+    width: 50%;
+  }
+
+  .lc-three-quarters {
+    width: 75%;
+  }
+
+  .lc-third {
+    width: 33.3334%;
+  }
+
+  .lc-two-thirds {
+    width: 66.6667%;
+  }
+}
+.spaceless {
+  margin: 0;
+  padding: 0;
+  max-width: none;
+  max-height: none;
+}
+
+.rm-padding {
+  padding: 0;
+}
+
+.rm-padding-top {
+  padding-top: 0;
+}
+
+.rm-padding-bottom {
+  padding-bottom: 0;
+}
+
+.rm-padding-right {
+  padding-right: 0;
+}
+
+.rm-padding-left {
+  padding-left: 0;
+}
+
+.rm-margin {
+  margin: 0;
+}
+
+.rm-margin-top {
+  margin-top: 0;
+}
+
+.rm-margin-bottom {
+  margin-bottom: 0;
+}
+
+.rm-margin-right {
+  margin-right: 0;
+}
+
+.rm-margin-left {
+  margin-left: 0;
+}
+
+@media all and (max-width: 60em) {
+  .grid-block-2 .block {
+    width: 49.15254%;
+    float: left;
+  }
+  .grid-block-2 .block:nth-child(2n + 1) {
+    margin-left: 0;
+    margin-right: -100%;
+    clear: both;
+    margin-left: 0;
+  }
+  .grid-block-2 .block:nth-child(2n + 2) {
+    margin-left: 50.84746%;
+    margin-right: -100%;
+    clear: none;
+  }
+
+  .grid-block-3 .block {
+    width: 32.20339%;
+    float: left;
+  }
+  .grid-block-3 .block:nth-child(3n + 1) {
+    margin-left: 0;
+    margin-right: -100%;
+    clear: both;
+    margin-left: 0;
+  }
+  .grid-block-3 .block:nth-child(3n + 2) {
+    margin-left: 33.89831%;
+    margin-right: -100%;
+    clear: none;
+  }
+  .grid-block-3 .block:nth-child(3n + 3) {
+    margin-left: 67.79661%;
+    margin-right: -100%;
+    clear: none;
+  }
+
+  .grid-block-4 .block {
+    width: 23.72881%;
+    float: left;
+  }
+  .grid-block-4 .block:nth-child(4n + 1) {
+    margin-left: 0;
+    margin-right: -100%;
+    clear: both;
+    margin-left: 0;
+  }
+  .grid-block-4 .block:nth-child(4n + 2) {
+    margin-left: 25.42373%;
+    margin-right: -100%;
+    clear: none;
+  }
+  .grid-block-4 .block:nth-child(4n + 3) {
+    margin-left: 50.84746%;
+    margin-right: -100%;
+    clear: none;
+  }
+  .grid-block-4 .block:nth-child(4n + 4) {
+    margin-left: 76.27119%;
+    margin-right: -100%;
+    clear: none;
+  }
+
+  .grid-block-6 .block {
+    width: 15.25424%;
+    float: left;
+  }
+  .grid-block-6 .block:nth-child(6n + 1) {
+    margin-left: 0;
+    margin-right: -100%;
+    clear: both;
+    margin-left: 0;
+  }
+  .grid-block-6 .block:nth-child(6n + 2) {
+    margin-left: 16.94915%;
+    margin-right: -100%;
+    clear: none;
+  }
+  .grid-block-6 .block:nth-child(6n + 3) {
+    margin-left: 33.89831%;
+    margin-right: -100%;
+    clear: none;
+  }
+  .grid-block-6 .block:nth-child(6n + 4) {
+    margin-left: 50.84746%;
+    margin-right: -100%;
+    clear: none;
+  }
+  .grid-block-6 .block:nth-child(6n + 5) {
+    margin-left: 67.79661%;
+    margin-right: -100%;
+    clear: none;
+  }
+  .grid-block-6 .block:nth-child(6n + 6) {
+    margin-left: 84.74576%;
+    margin-right: -100%;
+    clear: none;
+  }
+
+  .grid-block-12 .block {
+    width: 6.77966%;
+    float: left;
+  }
+  .grid-block-12 .block:nth-child(12n + 1) {
+    margin-left: 0;
+    margin-right: -100%;
+    clear: both;
+    margin-left: 0;
+  }
+  .grid-block-12 .block:nth-child(12n + 2) {
+    margin-left: 8.47458%;
+    margin-right: -100%;
+    clear: none;
+  }
+  .grid-block-12 .block:nth-child(12n + 3) {
+    margin-left: 16.94915%;
+    margin-right: -100%;
+    clear: none;
+  }
+  .grid-block-12 .block:nth-child(12n + 4) {
+    margin-left: 25.42373%;
+    margin-right: -100%;
+    clear: none;
+  }
+  .grid-block-12 .block:nth-child(12n + 5) {
+    margin-left: 33.89831%;
+    margin-right: -100%;
+    clear: none;
+  }
+  .grid-block-12 .block:nth-child(12n + 6) {
+    margin-left: 42.37288%;
+    margin-right: -100%;
+    clear: none;
+  }
+  .grid-block-12 .block:nth-child(12n + 7) {
+    margin-left: 50.84746%;
+    margin-right: -100%;
+    clear: none;
+  }
+  .grid-block-12 .block:nth-child(12n + 8) {
+    margin-left: 59.32203%;
+    margin-right: -100%;
+    clear: none;
+  }
+  .grid-block-12 .block:nth-child(12n + 9) {
+    margin-left: 67.79661%;
+    margin-right: -100%;
+    clear: none;
+  }
+  .grid-block-12 .block:nth-child(12n + 10) {
+    margin-left: 76.27119%;
+    margin-right: -100%;
+    clear: none;
+  }
+  .grid-block-12 .block:nth-child(12n + 11) {
+    margin-left: 84.74576%;
+    margin-right: -100%;
+    clear: none;
+  }
+  .grid-block-12 .block:nth-child(12n + 12) {
+    margin-left: 93.22034%;
+    margin-right: -100%;
+    clear: none;
+  }
+}
+.rc-2 {
+  border-radius: 2px;
+}
+.rc-2 [class*="__title"],
+.rc-2 .node .field-type-image__figure.caption {
+  border-radius: 2px 2px 0 0;
+}
+.rc-2 .node .field-type-image__figcaption {
+  border-radius: 0 0 2px 2px;
+}
+.rc-2 .block,
+.rc-2 .node--view-mode-teaser,
+.rc-2 .node .field-type-image__figure,
+.rc-2 input,
+.rc-2 .button,
+.rc-2 textarea,
+.rc-2 select {
+  border-radius: 2px;
+}
+
+.rc-3 {
+  border-radius: 3px;
+}
+.rc-3 [class*="__title"],
+.rc-3 .node .field-type-image__figure.caption {
+  border-radius: 3px 3px 0 0;
+}
+.rc-3 .node .field-type-image__figcaption {
+  border-radius: 0 0 3px 3px;
+}
+.rc-3 .block,
+.rc-3 .node--view-mode-teaser,
+.rc-3 .node .field-type-image__figure,
+.rc-3 input,
+.rc-3 .button,
+.rc-3 textarea,
+.rc-3 select {
+  border-radius: 3px;
+}
+
+.rc-4 {
+  border-radius: 4px;
+}
+.rc-4 [class*="__title"],
+.rc-4 .node .field-type-image__figure.caption {
+  border-radius: 4px 4px 0 0;
+}
+.rc-4 .node .field-type-image__figcaption {
+  border-radius: 0 0 4px 4px;
+}
+.rc-4 .block,
+.rc-4 .node--view-mode-teaser,
+.rc-4 .node .field-type-image__figure,
+.rc-4 input,
+.rc-4 .button,
+.rc-4 textarea,
+.rc-4 select {
+  border-radius: 4px;
+}
+
+.rc-5 {
+  border-radius: 5px;
+}
+.rc-5 [class*="__title"],
+.rc-5 .node .field-type-image__figure.caption {
+  border-radius: 5px 5px 0 0;
+}
+.rc-5 .node .field-type-image__figcaption {
+  border-radius: 0 0 5px 5px;
+}
+.rc-5 .block,
+.rc-5 .node--view-mode-teaser,
+.rc-5 .node .field-type-image__figure,
+.rc-5 input,
+.rc-5 .button,
+.rc-5 textarea,
+.rc-5 select {
+  border-radius: 5px;
+}
+
+.rc-6 {
+  border-radius: 6px;
+}
+.rc-6 [class*="__title"],
+.rc-6 .node .field-type-image__figure.caption {
+  border-radius: 6px 6px 0 0;
+}
+.rc-6 .node .field-type-image__figcaption {
+  border-radius: 0 0 6px 6px;
+}
+.rc-6 .block,
+.rc-6 .node--view-mode-teaser,
+.rc-6 .node .field-type-image__figure,
+.rc-6 input,
+.rc-6 .button,
+.rc-6 textarea,
+.rc-6 select {
+  border-radius: 6px;
+}
+
+.rc-7 {
+  border-radius: 7px;
+}
+.rc-7 [class*="__title"],
+.rc-7 .node .field-type-image__figure.caption {
+  border-radius: 7px 7px 0 0;
+}
+.rc-7 .node .field-type-image__figcaption {
+  border-radius: 0 0 7px 7px;
+}
+.rc-7 .block,
+.rc-7 .node--view-mode-teaser,
+.rc-7 .node .field-type-image__figure,
+.rc-7 input,
+.rc-7 .button,
+.rc-7 textarea,
+.rc-7 select {
+  border-radius: 7px;
+}
+
+.rc-8 {
+  border-radius: 8px;
+}
+.rc-8 [class*="__title"],
+.rc-8 .node .field-type-image__figure.caption {
+  border-radius: 8px 8px 0 0;
+}
+.rc-8 .node .field-type-image__figcaption {
+  border-radius: 0 0 8px 8px;
+}
+.rc-8 .block,
+.rc-8 .node--view-mode-teaser,
+.rc-8 .node .field-type-image__figure,
+.rc-8 input,
+.rc-8 .button,
+.rc-8 textarea,
+.rc-8 select {
+  border-radius: 8px;
+}
+
+.rc-9 {
+  border-radius: 9px;
+}
+.rc-9 [class*="__title"],
+.rc-9 .node .field-type-image__figure.caption {
+  border-radius: 9px 9px 0 0;
+}
+.rc-9 .node .field-type-image__figcaption {
+  border-radius: 0 0 9px 9px;
+}
+.rc-9 .block,
+.rc-9 .node--view-mode-teaser,
+.rc-9 .node .field-type-image__figure,
+.rc-9 input,
+.rc-9 .button,
+.rc-9 textarea,
+.rc-9 select {
+  border-radius: 9px;
+}
+
+.rc-10 {
+  border-radius: 10px;
+}
+.rc-10 [class*="__title"],
+.rc-10 .node .field-type-image__figure.caption {
+  border-radius: 10px 10px 0 0;
+}
+.rc-10 .node .field-type-image__figcaption {
+  border-radius: 0 0 10px 10px;
+}
+.rc-10 .block,
+.rc-10 .node--view-mode-teaser,
+.rc-10 .node .field-type-image__figure,
+.rc-10 input,
+.rc-10 .button,
+.rc-10 textarea,
+.rc-10 select {
+  border-radius: 10px;
+}
+
+.rc-12 {
+  border-radius: 12px;
+}
+.rc-12 [class*="__title"],
+.rc-12 .node .field-type-image__figure.caption {
+  border-radius: 12px 12px 0 0;
+}
+.rc-12 .node .field-type-image__figcaption {
+  border-radius: 0 0 12px 12px;
+}
+.rc-12 .block,
+.rc-12 .node--view-mode-teaser,
+.rc-12 .node .field-type-image__figure,
+.rc-12 input,
+.rc-12 .button,
+.rc-12 textarea,
+.rc-12 select {
+  border-radius: 12px;
+}
+
+.rc-15 {
+  border-radius: 15px;
+}
+.rc-15 [class*="__title"],
+.rc-15 .node .field-type-image__figure.caption {
+  border-radius: 15px 15px 0 0;
+}
+.rc-15 .node .field-type-image__figcaption {
+  border-radius: 0 0 15px 15px;
+}
+.rc-15 .block,
+.rc-15 .node--view-mode-teaser,
+.rc-15 .node .field-type-image__figure,
+.rc-15 input,
+.rc-15 .button,
+.rc-15 textarea,
+.rc-15 select {
+  border-radius: 15px;
+}
+
+.rc-20 {
+  border-radius: 20px;
+}
+.rc-20 [class*="__title"],
+.rc-20 .node .field-type-image__figure.caption {
+  border-radius: 20px 20px 0 0;
+}
+.rc-20 .node .field-type-image__figcaption {
+  border-radius: 0 0 20px 20px;
+}
+.rc-20 .block,
+.rc-20 .node--view-mode-teaser,
+.rc-20 .node .field-type-image__figure,
+.rc-20 input,
+.rc-20 .button,
+.rc-20 textarea,
+.rc-20 select {
+  border-radius: 20px;
+}
+
+.fa-arrow .menu li.collapsed > a:after {
+  content: "";
+}
+.fa-arrow .menu li.expanded > a:after {
+  content: "";
+}
+[dir="rtl"] .fa-arrow .menu li.collapsed > a:after {
+  content: "";
+}
+
+.fa-caret .menu li.collapsed > a:after {
+  content: "";
+}
+.fa-caret .menu li.expanded > a:after {
+  content: "";
+}
+[dir="rtl"] .fa-caret .menu li.collapsed > a:after {
+  content: "";
+}
+
+.fa-angle-double .menu li.collapsed > a:after {
+  content: "";
+}
+.fa-angle-double .menu li.expanded > a:after {
+  content: "";
+}
+[dir="rtl"] .fa-angle-double .menu li.collapsed > a:after {
+  content: "";
+}
+
+.fa-chevron .menu li.collapsed > a:after {
+  content: "";
+}
+.fa-chevron .menu li.expanded > a:after {
+  content: "";
+}
+[dir="rtl"] .fa-chevron .menu li.collapsed > a:after {
+  content: "";
+}
+
+.ms-dropmenu .fa-arrow .rm-block__content .menu-level-1 li.expanded > a:after,
+.ms-dropmenu .fa-arrow .rm-block__content .odd ul .odd > .expanded > a:after {
+  content: "";
+}
+.ms-dropmenu .fa-arrow .rm-block__content .odd ul > .expanded > a:after,
+.ms-dropmenu .fa-arrow .rm-block__content .odd ul > .collapsed > a:after {
+  content: "";
+}
+.ms-dropmenu .fa-caret .rm-block__content .menu-level-1 li.expanded > a:after,
+.ms-dropmenu .fa-caret .rm-block__content .odd ul .odd > .expanded > a:after {
+  content: "";
+}
+.ms-dropmenu .fa-caret .rm-block__content .odd ul > .expanded > a:after,
+.ms-dropmenu .fa-caret .rm-block__content .odd ul > .collapsed > a:after {
+  content: "";
+}
+.ms-dropmenu .fa-angle-double .rm-block__content .menu-level-1 li.expanded > a:after,
+.ms-dropmenu .fa-angle-double .rm-block__content .odd ul .odd > .expanded > a:after {
+  content: "";
+}
+.ms-dropmenu .fa-angle-double .rm-block__content .odd ul > .expanded > a:after,
+.ms-dropmenu .fa-angle-double .rm-block__content .odd ul > .collapsed > a:after {
+  content: "";
+}
+.ms-dropmenu .fa-chevron .rm-block__content .menu-level-1 li.expanded > a:after,
+.ms-dropmenu .fa-chevron .rm-block__content .odd ul .odd > .expanded > a:after {
+  content: "";
+}
+.ms-dropmenu .fa-chevron .rm-block__content .odd ul > .expanded > a:after,
+.ms-dropmenu .fa-chevron .rm-block__content .odd ul > .collapsed > a:after {
+  content: "";
+}
+
+/*# sourceMappingURL=shortcodes.css.map */

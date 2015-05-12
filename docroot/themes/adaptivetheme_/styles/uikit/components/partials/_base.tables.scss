@@ -1,0 +1,58 @@
+/**
+ * Table Base
+ * Set base styles for table elements.
+ ========================================================================== */
+
+table {
+  padding: 0;
+  width: 100%;
+  border: $border-width $border-style;
+  border-collapse: collapse;
+
+  caption {
+    @include adjust-font-size-to($large);
+  }
+}
+
+
+// tr, takes extensive styles if enabled in variables.scss.
+tr {
+  border: $border-width $border-style;
+}
+
+
+// Align captions and cell content.
+caption,
+th,
+td {
+  text-align: left; // LTR
+
+  // RTL
+  [dir*="rtl"] & {
+    text-align: right;
+  }
+}
+
+
+// thead.
+thead {
+  tr {
+    font-weight: $font-weight-semibold;
+  }
+}
+
+
+// tr, td and th border properties.
+tr,
+td,
+th {
+  border-style: $border-style;
+}
+
+
+// td, th.
+td,
+th {
+  @include output-rhythm(padding, $xx-small);
+  vertical-align: middle;
+}

@@ -1,0 +1,97 @@
+/**
+ * Menus
+ *  - style Drupal core block menus.
+ *  - for the drop menu and other responsive menus see the mixins and the
+ *    _component.menu.responsive.scss / responsive-menus.css.
+ ========================================================================== */
+
+.menu {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+
+  // Nested menus.
+  .menu {
+    @include output-rhythm(padding-#{$flow-from}, $medium); // LTR
+
+    // Strip border top from nested items.
+    .menu-item:first-child a {
+      //border-top:0;
+    }
+
+    a {
+      &:hover,
+      &:focus {}
+      &.active {}
+    }
+  }
+
+  // RTL, TODO why is this here?
+  [dir="rtl"] & {
+    @if $menu-arrows == true {
+      li.menu-item--collapsed > a:after {
+        content: $menu-arrow-right; // fa-angle-right
+      }
+    }
+  }
+}
+
+
+.menu-item {
+  text-align: $menu-text-align;
+
+  &--active-trail > a {}
+
+  // If menu arrows are true, add font-awesome and icons for
+  // expanded and collapsed selectors.
+  @if $menu-arrows == true {
+    &--collapsed > a,
+    &--expanded > a {
+    }
+
+    &--collapsed > a:after,
+    &--expanded > a:after {
+      font-family: $icon-font;
+      float: $flow-to; // LTR
+      padding: 0 1px;
+      text-align: $flow-to; // LTR
+      @include output-rhythm(width, $medium);
+    }
+
+    &--collapsed > a:after {
+      content: $menu-arrow-left; // LTR
+    }
+
+    &--expanded > a:after {
+      content: $menu-arrow-down ; //
+    }
+  }
+
+  // Add the border top to the first item only.
+  &:first-child a {
+    //border-top: $border-width $border-style;
+  }
+
+  a {
+    display: block;
+    @include output-rhythm(padding, $xx-small 0);
+    //border-bottom: $border-width $border-style;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+
+    &.active {}
+  }
+}
+
+
+
+// Region or row specfic menu overrides
+.pr-footer {
+  .menu-item a {
+    //border: 0;
+  }
+}
+

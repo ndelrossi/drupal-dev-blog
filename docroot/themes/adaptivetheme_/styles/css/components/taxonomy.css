@@ -1,0 +1,22 @@
+/**
+ * Field Taxonomy Reference
+ ========================================================================== */
+.field-type-taxonomy-term-reference .field__item {
+  margin: 0 11px 0 0;
+  margin: 0 0.69838rem 0 0;
+}
+[dir="rtl"] .field-type-taxonomy-term-reference li {
+  margin: 0 0 0 11px;
+  margin: 0 0 0 0.69838rem;
+}
+.field-type-taxonomy-term-reference .field__items {
+  padding: 0;
+}
+.field-type-taxonomy-term-reference .field__item {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  list-style: none;
+}
+
+/*# sourceMappingURL=taxonomy.css.map */

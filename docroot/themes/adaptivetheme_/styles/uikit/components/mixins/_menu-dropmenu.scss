@@ -1,0 +1,115 @@
+//
+// Accessible CSS only Drop menus.
+// The hidden state does not use display properties, instead we toggle
+// visually-hidden on :hover
+//
+//
+@mixin dropmenu($item-width: 12em, $arrows: true) {
+
+  .ms-dropmenu {
+
+    .rm-toggle {
+      @include visually-hidden;
+    }
+
+    .rm-block__content {
+
+      a {
+        position: relative;
+        @include output-rhythm(padding, $xx-small $large);
+
+        &:after {
+          position: absolute;
+          @include output-rhythm(right, $medium); // LTR
+        }
+      }
+
+      .menu-level-1 {
+        position: relative;
+
+        > li {
+          &:first-child {}
+          &:last-child {}
+
+          a {
+            &:hover,
+            &:focus {}
+          }
+        }
+
+        li {
+          float: left; // LTR
+          width: auto;
+
+          @if $arrows == true {
+            &.menu-item--collapsed > a,
+            &.menu-item--expanded > a {
+              @include output-rhythm(padding-#{$flow-to}, $medium * 2.5);
+            }
+
+            &.menu-item--expanded > a:after {
+              content: $menu-arrow-down;
+            }
+
+            &.menu-item--collapsed > a:after {
+              content: '';
+            }
+          }
+
+          ul {
+            @include visually-hidden;
+            transition: $transition_global;
+
+            li {
+              min-width: $item-width;
+              text-align: #{$flow-from};
+
+              &:hover,
+              &:focus {}
+            }
+          }
+
+          // visusally-hidden-off but without positioning.
+          &:hover > ul,
+          &:focus > ul {
+            display: block;
+            opacity: 1;
+            clip: auto;
+            overflow: visible;
+            height: auto;
+            width: auto;
+            font-family: inherit;
+          }
+        }
+      }
+
+      .odd {
+        // Down
+        ul {
+          left: 0; // LTR
+          top: auto;
+          //> li a {background-color: pink;}
+
+          @if $arrows == true {
+            > .menu-item--expanded > a:after {
+              content: $menu-arrow-right; // LTR In the down UL, li items with sub-menus have right pointing arrows.
+            }
+          }
+
+          // Accross
+          .odd {
+            left: 100%; // LTR
+            top: 0;
+            //> li a {background-color: yellow;}
+
+            @if $arrows == true {
+              > .menu-item--expanded > a:after {
+                content: $menu-arrow-down; // In the flyout UL, li items with sub-menus have down pointing arrows.
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

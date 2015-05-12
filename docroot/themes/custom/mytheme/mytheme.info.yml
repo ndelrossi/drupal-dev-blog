@@ -1,0 +1,19 @@
+name: My Theme
+desciption: 'My first Drupal theme'
+base theme: classy
+package: Custom
+type: theme
+version: 1.0
+core: 8.x
+
+libraries:
+  - mytheme/base
+  - mytheme/bootstrap
+
+regions:
+  header: Header
+  featured: Featured
+  content: Content
+  sidebar_first: First sidebar
+  sidebar_second: Second sidebar
+  footer: Footer

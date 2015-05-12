@@ -1,0 +1,74 @@
+{#
+/**
+ * @file
+ * Adaptivetheme implementation for an image field.
+ * AT can print captions on images, see your theme settings.
+ *
+ * To override output, copy the "field.html.twig" from the templates directory
+ * to your theme's directory and customize it, just like customizing other
+ * Drupal templates such as page.html.twig or node.html.twig.
+ *
+ * For example, for a field named 'body' displayed on the 'article' content
+ * type, any of the following templates will override this default
+ * implementation. The first of these templates that exists is used:
+ * - field--body--article.html.twig
+ * - field--article.html.twig
+ * - field--body.html.twig
+ * - field.html.twig
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the containing element.
+ * - label_hidden: Whether to show the field label or not.
+ * - title_attributes: HTML attributes for the title.
+ * - label: The label for the field.
+ * - content_attributes: HTML attributes for the content.
+ * - items: List of all the field items. Each item contains:
+ *   - attributes: List of HTML attributes for each item.
+ *   - content: The field item's content.
+ *
+ * @see template_preprocess_field()
+ *
+ * @ingroup themeable
+ */
+#}
+{% set field_name_class = field_name|clean_class %}
+{%
+  set classes = [
+    'field',
+    'field-' ~ entity_type|clean_class ~ '--' ~ field_name_class,
+    'field-name-' ~ field_name_class,
+    'field-type-' ~ field_type|clean_class,
+    'field-label-' ~ label_display,
+    label_display == 'inline' ? 'clearfix',
+  ]
+%}
+{%
+  set title_classes = [
+    'field__label',
+    label_display == 'visually_hidden' ? 'visually-hidden',
+  ]
+%}
+{% if items|length > 1 %}
+  {% set count_class = 'has-multiple' %}
+{% else %}
+  {% set count_class = 'has-single' %}
+{% endif %}
+
+<div{{ attributes.addClass(classes, count_class) }}>
+  {% if not label_hidden %}
+    <h3{{ title_attributes.addClass(title_classes, image_align) }}>{{ label }}</h3>
+  {% endif %}
+
+  {% for delta, item in items %}
+    {% if item.caption.show == true %}
+      <figure{{ item.attributes.addClass('field-type-image__figure', 'image-count-' ~ (delta + 1), 'caption', 'caption-img', image_align) }} role="group">
+    {% else %}
+      <figure{{ item.attributes.addClass('field-type-image__figure', 'image-count-' ~ (delta + 1), image_align) }}>
+    {% endif %}
+      {{ item.content }}
+      {% if item.caption.show == true %}
+        <figcaption class="field-type-image__figcaption" property="schema:description">{{ item.caption.title }}</figcaption>
+      {% endif %}
+    </figure>
+  {% endfor %}
+</div>

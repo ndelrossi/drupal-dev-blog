@@ -1,0 +1,149 @@
+/**
+ * Content Types (nodes)
+ *  - in Drupal a content type is a bunch of fields we use to enter and display
+ *    content, such as pages, blog posts, forum posts and so on. Each of those
+ *    is usually a content type you create in the Drupal admin.
+ *  - an instance of a content type (e.g. a single blog post) is called a node,
+ *    the root template is called node.html.twg and the base selector is .node {}
+ ========================================================================== */
+
+.node {
+  @include clearfix-micro;
+
+  //border: $node-teaser-border-color $node-teaser-border-width;
+
+  // Test card design by default
+  @include output-rhythm(margin-bottom, $medium);
+  @include output-rhythm(padding, $medium);
+  border-radius: $border-radius;
+}
+
+
+// Content types
+.node--type-article {}
+.node--type-page {}
+.node--type-forum {}
+
+
+// States
+.node--promoted {}
+.node--unpublished {}
+
+.node--sticky {
+  padding: 0;
+}
+
+
+// Header - includes title (h1 full, h2 teaser), user picture, author and date.
+.node__header
+.node__title {}
+
+
+// View modes
+.node--view-mode-full {
+  .node__title {
+    @include output-rhythm(margin, 0 0 $medium);
+  }
+}
+
+.node--view-mode-teaser {
+  .node__title {}
+}
+
+
+// Node title link (only applies to view-mode teaser).
+.node__title-link {}
+
+
+// Node author picture, name and date details.
+.node__meta {
+  @include output-rhythm(margin, $medium 0);
+
+  // Author picture is showing.
+  &.node__meta--has-author-picture {
+    @include output-rhythm(line-height, 48px);
+  }
+
+  // User picture.
+  .field-type-image {
+    float: #{$flow-from};
+    @include output-rhythm(margin, 0 $small 0 0);
+
+    img {
+      width: auto;
+      @include output-rhythm(height, 48px);
+    }
+  }
+
+  // figure wraper
+  .field-type-image__figure {
+    margin: 0;
+    padding: 0;
+  }
+
+  // Remove potentially empty article element.
+  article:empty {
+    display: none;
+  }
+}
+
+.node__submitted {}
+
+.node__author {
+  display: inline;
+  font-style: normal;
+}
+
+.node__datetime {}
+
+.node__meta--has-author-picture {
+  .node__submitted {
+    //@include adjust-font-size-to($medium/1.125);
+  }
+}
+
+
+// Footer wraps links.
+.node__footer {
+  @include clearfix-micro;
+  clear: both;
+
+  .links {}
+}
+
+
+// Node images
+// Example styling for placing a border on images & figures etc, this will
+// correctly add borders even when figcaptions are enabled and in use, these
+// example styles come from Pixture Reloaded.
+.node {
+
+  // CK Editor images without caption have no figure wrapper.
+  img {
+    //border: $border-width $border-style;
+    //@include output-rhythm(padding, $small);
+  }
+
+  figure {
+    //border: $border-width $border-style;
+    //@include output-rhythm(padding, $small);
+
+    img {
+      //padding: 0;
+      //border: 0;
+      //border-radius: 0 !important;
+    }
+
+    &.caption {
+      //border-bottom: 0;
+    }
+
+    figcaption {
+      //border: $border-width $border-style;
+      //border-top: 0;
+      //@include output-rhythm(padding, 0 $small $small);
+    }
+  }
+}
+
+

@@ -1,0 +1,627 @@
+//
+// Variable Settings.
+//
+//
+// =============================================================================
+//
+//      Breakpoints / Media Queries
+//
+// =============================================================================
+//
+// Adaptivetheme ships with two breakpoint module groups - simple and advanced.
+// The simple group is a subset of the advanced group and uses just two breakpoints,
+// tablet-isolate and widescreen. Below is a list of all breakpoints included with
+// AT Core (usable by all sub-themes in layout theme settings and here).
+//
+// SEE: adaptivetheme/at_core/at_core.breakpoints.yml
+//
+// These breakpoints use ems, which mean they are dependant on the base font size,
+// so any pixel equivalents stated here assume base font size of 16px. Change them
+// to suit your requirements.
+//
+//   mobile-isolate - 0 to 45em (0 to 720px), small screens only.
+//   tablet-isolate - 45.063em and max-width 65em (721px to 960px), isolatate tablets.
+//   wide-isolate   - 60.063em and max-width 120em (961px to 1920px), isolatate tablets.
+//   wide           - 60.063em (961px) and up.
+//   huge           - 120.063em (1921px) and up, for big resolution.
+//
+// Here you can see how each breakpoint cascades or isolates. Most of the time
+// a layout will use tablet-isolate and widescreen OR tablet-isolate, widescreen-isolate
+// and huge.
+//
+// | $mobile-isolate -->|
+//                      | $tablet-isolate -->|
+//                                           | $wide-isolate ------->|
+//                                           | $wide ------------------------------>
+//                                                                   | $huge ------>
+//
+$mobile-isolate : "all and (max-width: 45em)";
+$tablet-isolate : "all and (min-width: 45.063em) and (max-width: 60em)";
+$wide-isolate   : "all and (min-width: 60.063em) and (max-width: 120em)";
+$wide           : "all and (min-width: 60.063em)";
+$huge           : "all and (min-width: 120.063em)";
+
+
+// Breakpoints - Responsive Menus
+//
+// Responisve breakpoints differ in that they are all max-width. In other words they are
+// effectively a "desktop first" strategy. The concept is that we set the responsive menu
+// to activate up to a certain width, after that the default menu is activated.
+//
+// The "max-width" breakpoint is a special case in that it exactly matches the CSS "max-width"
+// of the default layout settings. AT sub-themes are set to use this breakpoint by default
+// for responsive menus (see Responsive Menu extension in Appearance settings).
+//
+//   mobile    - 0 to 60em (0 to 960px)
+//   max-width - 0 to 75em (0 to 1200px)
+//
+// | mobile ------------->|
+// | maxwidth ------------------------------->|
+//
+$mobile    : "all and (max-width: 60em)";
+$max-width : "all and (max-width: 75em)";
+
+
+
+
+// =============================================================================
+//
+//      Typography
+//
+// =============================================================================
+
+
+// Vertical Rhythm
+// -----------------------------------------------------------------------------
+// Compass Vertical Rhythm is used in conjunction with Modular Scale.
+//
+//  https://github.com/chriseppstein/compass/blob/1.0.0.alpha.19/core/stylesheets/compass/typography/_vertical_rhythm.scss
+//  -- link to modular scale stuff--
+//
+// MS provides the scale, while Vertical Rhythm sets adjusted font sizes and line heights.
+// From these numbers you will get a base line-height of 1.5
+
+$base-font-size       : 16px;
+$base-line-height     : 6px;   // set adjust-leading-to(4); on body!
+$rhythm-unit          : 'rem';
+
+
+// Modular Scale
+// -----------------------------------------------------------------------------
+$ms-base  : $base-font-size ($base-font-size * 1.130);
+$ms-ratio : $phi;
+
+
+// Modular Scale size variables.
+// -----------------------------------------------------------------------------
+// The output is always a px value. We use Compass mixins and some
+// internal functions to convert to rem where required, or simply use
+// the variable if you want a pixel value.
+//
+// For example we use the compass mixin: adjust-font-size-to()
+// which returns both the font-size and line-height in rem with a px
+// fallback for browsers that do not support rem units.
+//
+// The UIKit has it's own font-size() mixin which will do the same but
+// without the line-height, e.g.:
+//
+// .selector {@include font-size($medium);} will return:
+// .selector {font-size: 16px; font-size: 1rem;}
+//
+// Throughout the UIKit you will see other Compass mixins used to return
+// px and rem units, such as consistantly using output-rhythm() to
+// achieve full browser support.
+
+$xxxx-large : ms(5);
+$xxx-large  : ms(4);
+$xx-large   : ms(3);
+$x-large    : ms(2);
+$large      : ms(1);
+$medium     : ms(0);
+$small      : ms(-1);
+$x-small    : ms(-2);
+$xx-small   : ms(-3);
+$xxx-small  : ms(-4);
+$xxxx-small : ms(-5);
+
+
+// Font Weights
+// -----------------------------------------------------------------------------
+$font-weight-bold     : 700;
+$font-weight-semibold : 600;
+$font-weight-normal   : 400;
+$font-weight-light    : 300;
+
+
+// Font Families
+// -----------------------------------------------------------------------------
+$times-roman : "Times New Roman", Times, Georgia, "DejaVu Serif", serif;
+$times       : Times, "Times New Roman", Georgia, "DejaVu Serif", serif;
+$georgia     : Georgia, "Times New Roman", "DejaVu Serif", serif;
+$verdana     : Verdana, Tahoma, "DejaVu Sans", sans-serif;
+$tahoma      : Tahoma, Verdana, "DejaVu Sans", sans-serif;
+$helvetica   : Helvetica, Arial, "Nimbus Sans L", sans-serif;
+$arial       : Arial, Helvetica, "Nimbus Sans L", sans-serif;
+$impact      : Impact, 'Helvetica Inserat', 'Bitstream Vera Sans Bold', 'Arial Black', sans-serif;
+$courier     : "Courier New", "DejaVu Sans Mono", monospace, sans-serif;
+$sans-serif  : sans-serif;
+$serif       : serif;
+
+
+// Set default font families.
+$base-font-family : $sans-serif;
+$font-monospace   : $courier;
+
+
+
+
+// =============================================================================
+//
+//      Global Defaults
+//
+// =============================================================================
+
+// Lighten and Darken values
+// -----------------------------------------------------------------------------
+$lighten       : 3%;
+$lighten-more  : 5%;
+$lighten-most  : 10%;
+$darken        : 3%;
+$darken-more   : 5%;
+$darken-most   : 10%;
+
+
+// Global Transition
+// -----------------------------------------------------------------------------
+$transition_global: all, .15s, ease;
+
+
+// Color module "shift" base.
+// -----------------------------------------------------------------------------
+$base-color                  : #000000;
+
+
+// Text colors
+// -----------------------------------------------------------------------------
+$text-color                  : #363636;
+$text-background-color       : #ededed;
+
+
+// Link colors
+// -----------------------------------------------------------------------------
+$link-color                  : #0066cc;
+$link-hover-color            : $link-color;
+$link-active-color           : $link-color;
+$link-visited-color          : $link-color;
+$link-visited-hover-color    : $link-color;
+
+
+// Borders
+// -----------------------------------------------------------------------------
+$border-width                : 1px;
+$border-style                : solid;
+$border-color                : #cccccc;
+$border-radius               : 2px;
+
+
+// Success colors
+// -----------------------------------------------------------------------------
+$success-text-color          : #325e1c;
+$success-border-color        : #c9e1bd;
+$success-background-color    : #f3faef;
+
+
+// Warning colors
+// -----------------------------------------------------------------------------
+$warning-text-color          : #734c00;
+$warning-border-color        : #f4daa6;
+$warning-background-color    : #fdf8ed;
+
+
+// Error colors
+// -----------------------------------------------------------------------------
+$error-text-color            : #a51b00;
+$error-border-color          : #f9c9bf;
+$error-background-color      : #fcf4f2;
+
+
+// Selection color
+// -----------------------------------------------------------------------------
+$selection-color             : #b3d4fc;
+
+
+// Zebra striping
+// -----------------------------------------------------------------------------
+$odd-color  : transparent;
+$even-color : $text-background-color;
+
+
+
+
+// =============================================================================
+//
+//       Component Partials and Mixin Variables.
+//
+// =============================================================================
+
+
+// Page, Regions, Blocks and element specific styles.
+// -----------------------------------------------------------------------------
+
+// body element.
+$body-background-color       : #333333;
+
+// .page, an inner-body full width page background.
+$page-background-color       : #f7f7f7;
+
+// Wrapper around regions, the max-width is set on this wrapper.
+$regions-background-color    : $page-background-color;
+
+
+
+// Page Row colors (for site-builder layout plugin)
+// -----------------------------------------------------------------------------
+
+// Full width background toggle
+$page-row-fullwidth                : true;
+$regions-padding                   : $medium;
+
+
+// Header
+$page-header-color                 : $text-color;
+$page-header-background-color      : #ffffff;
+
+
+// Navbar
+$page-navbar-color                 : #ffffff;
+$page-navbar-background-color      : #666666;
+
+
+// Messages
+$page-messages-color               : $text-color;
+$page-messages-background-color    : $regions-background-color;
+
+
+// Features
+$page-features-color               : $text-color;
+$page-features-background-color    : #d3d3d3;
+
+
+// Main
+$page-main-color                   : $text-color;
+$page-main-background-color        : $regions-background-color;
+
+
+// Sub Features
+$page-subfeatures-color            : $text-color;
+$page-subfeatures-background-color : #d3d3d3;
+
+
+// Footer
+$page-footer-color                 : #ffffff;
+$page-footer-background-color      : #666666;
+
+
+
+// Branding
+// -----------------------------------------------------------------------------
+$site-name-color                   : $link-color;
+$site-slogan-color                 : $text-color;
+
+
+// Blocks
+// -----------------------------------------------------------------------------
+$block-color                       : $text-color;
+$block-background-color            : #ffffff;
+
+$block-title-color                 : $text-color;
+$block-title-background-color      : #ffffff;
+
+$block-link-color                  : $link-color;
+
+
+// Menus
+// -----------------------------------------------------------------------------
+$menu-text-align                   : $flow-from; // ltr or from-left
+
+$menu-color                        : $link-color;
+$menu-hover-color                  : $link-hover-color;
+$menu-active-color                 : $link-active-color;
+
+$menu-border-color                 : $border-color;
+$menu-border-hover-color           : $border-color;
+$menu-border-active-color          : $border-color;
+
+$menu-background-color             : $regions-background-color;
+$menu-background-hover-color       : $text-background-color;
+$menu-background-active-color      : $text-background-color;
+
+$menu-border-width                 : $border-width;
+$menu-border-style                 : $border-style;
+$menu-border-radius                : $border-radius;
+
+$menu-arrows                       : true;
+
+
+// Responsive menus
+// -----------------------------------------------------------------------------
+$resp-menu-color                   : inherit;
+$resp-menu-background-color        : inherit;
+
+$resp-menu-hover-color             : inherit;
+$resp-menu-active-color            : inherit;
+
+$resp-menu-hover-background-color  : rgba(255,255,255,0.3);
+$resp-menu-active-background-color : rgba(255,255,255,0.3);
+
+
+// Drop menu
+// -----------------------------------------------------------------------------
+$dropmenu-item-width               : 12em;
+$dropmenu-arrows                   : true;
+
+
+// Forms
+// -----------------------------------------------------------------------------
+$form-text-align                   : center;
+
+$form-text-color                   : lighten($text-color, $lighten-most); // If text is #000, lighten 20% is #333
+
+$form-text-focus-color             : $text-color;
+
+$form-border-color                 : $border-color;
+$form-border-focus-color           : $border-color;
+
+$form-background-color             : #ffffff;
+$form-background-focus-color       : lighten($text-background-color, $lighten-most);
+
+$form-help-color                   : lighten($text-color, $lighten-most);
+$form-marker-color                 : #ee0000; // bright red, typically styles the asterisk (*) on required form fields.
+
+$form-border-width                 : $border-width;
+$form-border-style                 : $border-style;
+$form-border-radius                : $border-radius;
+
+$form_input_button_select_height   : $xx-large;
+$form-box-shadow                   : false;
+
+
+// Buttons
+// -----------------------------------------------------------------------------
+$button-text-align                 : center;
+
+$button-color                      : #ffffff;
+$button-hover-color                : $button-color;
+
+$button-border-color               : $link-color;
+
+$button-background-color           : $link-color;
+$button-background-hover-color     : $link-color;
+
+$button-border-width               : $border-width;
+$button-border-style               : $border-style;
+$button-border-radius              : $border-radius;
+
+$button-box-shadow                 : true;
+
+// Button Primary
+$button-primary-text-color         : $button-color;
+$button-primary-background-color   : $link-color;
+$button-primary-border-color       : $link-color;
+
+
+// Tabs
+// -----------------------------------------------------------------------------
+$tab-text-align                    : center;
+
+$tab-color                         : $text-color;
+$tab-hover-color                   : $text-color;
+$tab-active-color                  : $text-color;
+
+$tab-border-color                  : $border-color;
+$tab-border-hover-color            : $border-color;
+$tab-border-active-color           : $border-color;
+
+//$tab-background-color             : $text-background-color;
+$tab-background-color              : lighten($text-background-color, $lighten-more);
+
+$tab-background-hover-color        : $text-background-color;
+$tab-background-active-color       : $text-background-color;
+
+$tab-border-width                  : $border-width;
+$tab-border-style                  : $border-style;
+$tab-border-radius                 : $border-radius;
+
+
+// Lists
+// -----------------------------------------------------------------------------
+$list-text-align                   : center;
+
+$list-color                        : $text-color;
+$list-hover-color                  : $text-color;
+$list-active-color                 : $text-color;
+
+$list-border-color                 : $border-color;
+$list-border-hover-color           : $border-color;
+$list-border-active-color          : $border-color;
+
+//$list-background-color            : $text-background-color;
+$list-background-color             : lighten($text-background-color, $lighten-more);
+
+$list-background-hover-color       : $text-background-color;
+$list-background-active-color      : $text-background-color;
+
+$list-border-width                 : $border-width;
+$list-border-style                 : $border-style;
+$list-border-radius                : $border-radius;
+
+
+// Breadcrumbs
+// -----------------------------------------------------------------------------
+$breadcrumb-color                  : $link-color;
+
+$breadcrumb-hover-color            : $link-color;
+$breadcrumb-active-color           : $link-color;
+
+$breadcrumb-visited-color          : $link-visited-color;
+$breadcrumb-visited-hover-color    : $link-visited-color;
+
+$breadcrumb-seperator-color        : $border-color;
+
+
+// Tables
+// -----------------------------------------------------------------------------
+$table-cell-borders                : false; // set to true if you want borders on every cell
+$table-border-color                : $border-color;
+
+// thead
+$thead-background-color            : $text-background-color;
+$thead-text-color                  : $text-color;
+
+// row striping
+$table-row-striping                : false;
+$table-row-odd-color               : $odd-color;
+$table-row-even-color              : $even-color;
+
+// col striping, applies to the active column in sortable tables.
+$table-col-striping                : false;
+$table-col-odd-color               : $text-background-color;
+//$table-col-even-color             : $text-background-color; // TODO - strategy for column striping even color
+$table-col-even-color              : darken($text-background-color, 2%);
+
+// hover
+$tr-hover                          : false;
+//$tr-hover-color                   : $text-background-color; // TODO - strategy for table row hover color
+$tr-hover-color                    : darken($text-background-color, $darken);
+
+
+// Nodes
+// -----------------------------------------------------------------------------
+$node-teaser-color                 : $text-color;
+$node-teaser-background-color      : #ffffff;
+
+$node-teaser-border-color          : $border-color;
+$node-teaser-border-width          : $border-width;
+$node-teaser-border-style          : $border-style;
+
+$node-teaser-box-shadow            : 0 3px 4px 0 rgba(0, 0, 0, 0.1);
+
+
+// Fields
+// -----------------------------------------------------------------------------
+// By default we only have settings for taxonomy term reference fields.
+$field-taxonomy-item-as-labels     : false;
+$field-taxonomy-item-icons         : false;
+$field-taxonomy-label-as-icon      : false; // Label must not be hidden in field display settings.
+
+
+
+// Font Icons
+// -----------------------------------------------------------------------------
+// AT uses Font Awesome by default for most icons, including replacing Drupal
+// core icons for things like details summery, action links, messages, file
+// types, menu items, slideshow and probably others.
+// Some icons are svg inline (forum and RSS), and the search icon is an
+// svg icon served as a background image.
+
+$icon-font                         : FontAwesome, sans-serif;
+
+// Menu
+$menu-arrow-left                   : $fa-var-angle-left;
+$menu-arrow-right                  : $fa-var-angle-right;
+$menu-arrow-up                     : $fa-var-angle-up;
+$menu-arrow-down                   : $fa-var-angle-down;
+$menu-hamburger                    : $fa-var-bars;
+
+// Forms
+$form-details-summary-open         : $fa-var-caret-down;
+$form-details-summary-closed       : $fa-var-caret-right;
+$form-details-summary-closed-rtl   : $fa-var-caret-left;
+
+// Buttons
+$button-action-icon                : $fa-var-plus;
+$button-action-login-icon          : $fa-var-user;
+
+// Slideshow
+$slide-direction-previous          : $fa-var-chevron-left;
+$slide-direction-next              : $fa-var-chevron-right;
+
+// File types
+$file-default-icon                 : $fa-var-file-o;
+$file-archive-icon                 : $fa-var-file-archive-o;
+$file-spreadsheet-icon             : $fa-var-file-excel-o;
+$file-office-document-icon         : $fa-var-file-word-o;
+$file-presentation-icon            : $fa-var-file-powerpoint-o;
+$file-code-icon                    : $fa-var-file-code-o;
+$file-plain-text-file-icon         : $fa-var-file-text-o;
+$file-pdf-icon                     : $fa-var-file-pdf-o;
+$file-audio-icon                   : $fa-var-file-audio-o;
+$file-video-icon                   : $fa-var-file-video-o;
+$file-image-icon                   : $fa-var-file-image-o;
+
+// Help (e.g. formatting tips link icon)
+$help-icon                         : $fa-var-question-circle;
+
+// Breadcrumb
+$breadcrumb-seperator-icon         : $fa-var-angle-right;
+
+// Labels
+$more-link-icon                    : $fa-var-caret-right;
+
+// Taxonomy
+$field-taxonomy-label-icon         : $fa-var-tags;
+$field-taxonomy-item-icon          : $fa-var-tag;
+
+// Elements
+$blockquote-icon                   : $fa-var-quote-left;
+
+// Messages                        // FontAwesome variables
+$messages-status-icon              : $fa-var-smile-o;
+$messages-warning-icon             : $fa-var-exclamation-triangle;
+$messages-error-icon               : $fa-var-frown-o;
+
+
+
+// States - e.g. sticky, promoted etc.
+// -----------------------------------------------------------------------------
+$sticky-color                      : $text-color;
+$sticky-background-color           : $regions-background-color;
+
+$promoted-color                    : $text-color;
+$promoted-background-color         : $regions-background-color;
+
+$unpublished-color                 : #fff4f4;
+$unpublished-background-color      : darken($unpublished-color, $darken-more);
+
+$preview-color                     : $text-color;
+$preview-background-color          : #ffffea;
+
+
+// Patterns
+// -----------------------------------------------------------------------------
+// Patterns are image files that can be set on the page and row backgrounds.
+
+$patterns: null; // A list of pattern file names
+
+
+
+// =============================================================================
+//
+//       Browser Versions
+//
+// =============================================================================
+// NOTE: by default the UIKit does not use any Compass vendor prefixing, instead
+// the CSS files are post processed using autofixer (grunt-autoprefixer). You
+// need to use Grunt if you want automated prefixing.
+// -----------------------------------------------------------------------------
+// Optional map of minimum browser versions to support. For example, to
+// remove support for IE 7 and earlier, set $browser-minimum-versions['ie']
+// to '8'.
+//$browser-minimum-versions: (
+//  'chrome'  : null,
+//  'firefox' : null,
+//  'ie'      : 9,
+//  'safari'  : null,
+//  'opera'   : null
+//) !default;
+

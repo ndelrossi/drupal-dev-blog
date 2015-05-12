@@ -1,0 +1,30 @@
+
+// Easily generate button style variants.
+@mixin button-variant($text-color, $background-color, $border-color) {
+  color: $text-color;
+  background-color: $background-color;
+  border-color: $border-color;
+  opacity: 0.9;
+
+  // Buttons can be links.
+  &:link,
+  &:visited {
+    color: $text-color;
+    background-color: $background-color;
+    border-color: $border-color;
+  }
+
+  &:hover,
+  &:focus,
+  &:active,
+  &.active {
+    color: $text-color;
+    background-color: $background-color;
+    border-color: $border-color;
+    opacity: 1;
+
+    // darken throws some really weird colors when using shift in the color module.
+    //background-color: darken($background-color, $darken);
+    //border-color: darken($border-color, $darken);
+  }
+}

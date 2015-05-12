@@ -1,0 +1,244 @@
+/**
+ * Buttons
+ * We include button styling seperate (from _forms.scss, Form Base/Theme in base.css)
+ * mainly because the form styles are quite long already and we often want to add
+ * unique button variants.
+ *
+ *  - applies to elements with class "button", includes styles for:
+ *  - input buttons
+ *  - anchor links styled as buttons
+ *  - drop buttons
+ *  - action link buttons
+ ========================================================================== */
+
+button,
+.button {
+  max-width: 100%;
+  width: auto;
+  position: relative;
+  box-sizing: border-box;
+  @include output-rhythm(height, $form_input_button_select_height);
+  @include output-rhythm(padding, 0 $x-small);
+
+  border-radius: $button-border-radius;
+  border: $button-border-width $button-border-style;
+
+  transition: background-color, .15s, ease-in-out;
+  cursor: pointer;
+
+  text-decoration: none;
+  text-align: $button-text-align;
+  font-weight: $font-weight-normal;
+  @include output-rhythm(line-height, $form_input_button_select_height);
+  white-space: nowrap;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+
+  &[disabled] {
+    &:hover {
+    }
+  }
+}
+
+
+//
+// Button variants are primarly changes in colors, so are set in _theme.color.scss using the
+// button-variant() mixin.
+//
+
+// Primary button
+.button--primary {
+}
+
+// Danger button, e.g. delete buttons often have this class.
+.button--danger {
+}
+
+// Action button
+// - are links with an icon, and we add an icon for extra visibility.
+.button-action {
+  display: inline-block;
+  vertical-align: bottom;
+
+  &:before {
+    font-family: $icon-font;
+    content: $button-action-icon;
+
+    @include adjust-font-size-to($small);
+    @include output-rhythm(padding-#{$flow-to}, 4px);
+
+    display: inline-block;
+    vertical-align: text-bottom;
+  }
+
+  // User is logged out, gets a button link to login.
+  &[data-drupal-link-system-path="user/login"]:before {
+    content: $button-action-login-icon;
+
+    @include adjust-font-size-to($medium);
+    @include output-rhythm(padding-#{$flow-to}, 7px);
+
+    vertical-align: baseline;
+  }
+}
+
+
+// Preview buttons should be neutral. See _theme.color.scss
+#edit-preview {}
+
+
+/* Drop buttons */
+.js .dropbutton-widget {
+  border: $button-border-width $button-border-style;
+  border-radius: $button-border-radius;
+}
+
+.js .dropbutton-wrapper {
+  display: block;
+  min-height: 2em;
+  margin-right: 4px; // LTR
+  position: relative;
+}
+
+[dir="rtl"] .js .dropbutton-wrapper {
+  margin-right: 0;
+  margin-left: 4px;
+}
+
+.dropbutton {
+  input {
+    text-align: left; // LTR
+    @include output-rhythm(height, $form_input_button_select_height -$button-border-width * 2);
+  }
+
+  .dropbutton-action {
+    > * {
+      white-space: nowrap;
+      line-height: normal; // some drop buttons are links
+      @include output-rhythm(padding, 0 $x-small);
+    }
+
+    a {
+      @include output-rhythm(padding, 2px $x-small);
+    }
+  }
+
+  .secondary-action {
+    border-top: $button-border-width $button-border-style;
+    border-radius: 0 0 0 $button-border-radius;
+
+    .button {
+      border: 0;
+      width: 100%;
+
+      &:hover,
+      &:focus {
+        border-radius: 0 0 0 $button-border-radius;
+      }
+    }
+  }
+
+  .dropbutton-toggle {
+    button {
+      background: none;
+      box-shadow: none;
+
+      &:hover,
+      &:focus,
+      &:actived {
+        background: none;
+        box-shadow: none;
+      }
+    }
+  }
+
+  // RTL
+  [dir="rtl"] & {
+    margin: 0 3px 0 0;
+
+    input {
+      text-align: right;
+    }
+  }
+}
+
+
+// Dropbutton Multiple
+.dropbutton-multiple {
+  .dropbutton {
+    border-right: $button-border-width $button-border-style;
+
+   .dropbutton-action > * {
+      margin-right: 0;
+      border: 0;
+    }
+
+    .dropbutton-action .button {
+      border-radius: $button-border-radius 0 0 $button-border-radius;
+      width: 100%;
+    }
+
+    // RTL
+    [dir="rtl"] & {
+      border-left: $button-border-width $button-border-style;
+      border-right: 0;
+
+      .dropbutton-action > * {
+        margin-left: 0;
+      }
+    }
+  }
+
+  &.open {
+    .dropbutton-action .button {
+      border-radius: $button-border-radius 0 0 0;
+    }
+  }
+
+  // Include secondary actions after "open" so
+  // the styles cascade properly.
+  .dropbutton {
+    .secondary-action {
+      .button {
+        border-radius: 0 0 0 $button-border-radius;
+
+        &:hover,
+        &:focus {
+          border-radius: 0 0 0 $button-border-radius;
+        }
+      }
+    }
+  }
+}
+
+
+/**
+ * Show buttons as links.
+ */
+button.link {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  font-size: 1em;
+}
+
+label button.link {
+  font-weight: bold;
+}
+
+
+/**
+ * Styles for link buttons and action links. TODO.
+ */
+li[class*="action--"] {
+  list-style: none;
+  padding: 0;
+  @include output-rhythm(margin, $medium 0);
+}
+
+

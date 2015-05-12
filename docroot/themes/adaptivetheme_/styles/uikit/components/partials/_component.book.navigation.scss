@@ -1,0 +1,103 @@
+/**
+ * Book
+ * Set styles for book navigation.
+ ========================================================================== */
+// @include output-rhythm(padding, $xx-small 0);
+
+// Menu tree in book navigation links.
+.book-menu-tree {}
+
+
+.book-pager {
+  //@include output-rhythm(margin-bottom, $medium);
+  padding: 0;
+  overflow: auto;
+
+  border-top: $border-width $border-style $border-color;
+  border-bottom: $border-width $border-style $border-color;
+
+  // Book navigation menu tree is showing.
+  .has-tree & {
+    border-top: 0;
+  }
+}
+
+
+.book-pager__item {
+  list-style: none;
+  vertical-align: top;
+}
+
+
+.book-pager__link {
+  @include output-rhythm(padding, $xx-small 0);
+  display: inline-block;
+
+  &:before,
+  &:after {
+    font-family: $icon-font;
+    display: inline-block;
+
+    [dir="rtl"] & {
+      @include fa-icon-flip(-1, 1, 0);
+    }
+  }
+}
+
+
+// Use the maximum width by incorporating a more complex layout
+// of floats and box-sizing.
+.book-pager__previous {
+  text-align: left; // LTR
+  float: $flow-from; // LTR
+  width: 46%;
+
+  a {
+    &:before {
+      content: $menu-arrow-left;
+      @include output-rhythm(width, $medium);
+    }
+  }
+
+  // RTL
+  [dir="rtl"] & {
+    text-align: right;
+    float: $flow-to;
+  }
+}
+
+
+.book-pager__up {
+  text-align: center;
+  float: $flow-from; // LTR
+  width: 8%;
+
+  // RTL
+  [dir="rtl"] & {
+    float: $flow-to;
+  }
+}
+
+
+.book-pager__next {
+  text-align: right; // LTR
+  float: $flow-to; // LTR
+  width: 46%;
+
+  a {
+    &:after {
+      content: $menu-arrow-right;
+      @include output-rhythm(width, $medium);
+    }
+  }
+
+  // RTL
+  [dir="rtl"] & {
+    text-align: left;
+    float: $flow-from;
+  }
+}
+
+
+
+

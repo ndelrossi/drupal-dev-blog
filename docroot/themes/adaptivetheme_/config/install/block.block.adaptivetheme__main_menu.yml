@@ -1,0 +1,16 @@
+id: adaptivetheme__main_menu
+theme: adaptivetheme_
+weight: 0
+status: true
+langcode: en
+region: navbar
+plugin: 'system_menu_block:main'
+settings:
+  label: 'Menu'
+  id: 'system_menu_block:main'
+  provider: system
+  label_display: 0
+  level: 1
+  depth: 1
+  cache:
+    max_age: -1

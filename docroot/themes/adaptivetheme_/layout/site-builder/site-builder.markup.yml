@@ -1,0 +1,61 @@
+# Site Builder Layout Plugin.
+
+name: 'Site Builder Row Styles'         # Human readable layout name. Required.
+type: 'at_layout'                       # All layouts are type 'at_layout'. Required.
+version: '8.x-1.0-dev'                  # Version string. Optional.
+
+# Rows. Required!
+# Here we declare all rows and their regions. AT Core uses this to setup regions in the themes
+# info file, and to build the layout CSS classes. Here you must at least declare regions,
+# optionally you can add attributes (which are printed on the row HTML wrapper).
+rows:
+  messages:          # row key (name)
+    attributes:      # attributes key. Set id, role, classes etc. Optional.
+      id: messages
+    regions:         # use the key "regions" to declare row regions.
+      messages: 'Messages'
+  leaderboard:
+    attributes:
+      id: leaderboard
+    regions:
+      leaderboard: 'Leaderboard'
+  header:
+    attributes:
+      role: banner
+      id: masthead
+    regions:
+      header_first: 'Header first'
+      header_second: 'Header second'
+  navbar:
+    attributes:
+      id: navbar
+    regions:
+      navbar: 'Navbar'
+  features:
+    attributes:
+      id: features
+    regions:
+      features_first: 'Features first'
+      features_second: 'Features second'
+      features_third: 'Features third'
+  main:
+    attributes:
+      id: main-content
+    regions:
+      content: 'Main content'
+      sidebar_first: 'Sidebar first'
+      sidebar_second: 'Sidebar second'
+  subfeatures:
+    attributes:
+      id: sub-features
+    regions:
+      subfeatures_first: 'Sub-features first'
+      subfeatures_second: 'Sub-features second'
+      subfeatures_third: 'Sub-features third'
+      subfeatures_fourth: 'Sub-features fourth'
+  footer:
+    attributes:
+      role: contentinfo
+      id: footer
+    regions:
+      footer: 'Footer'

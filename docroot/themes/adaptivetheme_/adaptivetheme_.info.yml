@@ -1,0 +1,37 @@
+name: 'adaptivetheme1'
+type: theme
+base theme: at_core
+subtheme type: adaptive_subtheme
+layout: site-builder
+description: 'Sub theme of AT Core (base theme: at_core)'
+alt text: 'Screenshot for adaptivetheme1'
+tags: sub-theme
+regions:
+  messages: 'Messages'
+  leaderboard: 'Leaderboard'
+  header_first: 'Header first'
+  header_second: 'Header second'
+  navbar: 'Navbar'
+  features_first: 'Features first'
+  features_second: 'Features second'
+  features_third: 'Features third'
+  content: 'Main content'
+  sidebar_first: 'Sidebar first'
+  sidebar_second: 'Sidebar second'
+  subfeatures_first: 'Sub-features first'
+  subfeatures_second: 'Sub-features second'
+  subfeatures_third: 'Sub-features third'
+  subfeatures_fourth: 'Sub-features fourth'
+  footer: 'Footer'
+  page_top: 'Page top'
+  page_bottom: 'Page bottom'
+features:
+    - node_user_picture
+    - comment_user_picture
+    - comment_user_verification
+    - favicon
+    - logo
+version: 8.0.x
+core: 8.x
+project: adaptivetheme
+datestamp: 1428835091

@@ -1,0 +1,93 @@
+/**
+ * Table Theme
+ * Style Drupal selectors for tables.
+ ========================================================================== */
+
+table {
+
+  // Prevent the sticky header from hiding behind other content.
+  &.sticky-header {
+    z-index: 10;
+  }
+
+  .view-table__details {
+    padding: 0;
+    @include output-rhythm(margin, 0 0 $medium);
+    @include adjust-font-size-to($medium);
+  }
+
+  .view-table__details,
+  .view-table__details--summary {
+    border: 0;
+  }
+
+  .view-table__details--description {
+    font-style: italic;
+  }
+
+  // Lists, such as item-lists, can appear in tables.
+  ul {
+    margin: 0;
+  }
+}
+
+
+// tr, takes extensive styles if enabled in variables.scss.
+// color is applied in _theme.color.scss to most of these selectors.
+tr {
+  // Row striping (zebra).
+  @if $table-row-striping == true {
+    &.odd {
+    }
+
+    // nth-child class will capture tables in content that do not
+    // include the odd/even classes.
+    &.info,
+    &.even,
+    &:nth-child(2n+2)  {
+    }
+  }
+
+  // Hover color.
+  @if $tr-hover == true {
+    &:hover {
+    }
+  }
+
+  // Column striping, applies to the active column in sortable tables.
+  @if $table-col-striping == true {
+    &.odd td.active {
+    }
+    &.even td.active {
+    }
+  }
+}
+
+
+// td, th.
+td,
+th {
+  @if $table-cell-borders == false {
+    border-width: 0;
+  }
+}
+
+
+// Display all borders.
+@if $table-cell-borders == true {
+  thead,
+  tbody,
+  tr,
+  th,
+  td {
+    border-width: $border-width;
+  }
+}
+
+
+// thead. TODO, figure out where this applies?
+thead {
+  .active img {
+    display: inline;
+  }
+}

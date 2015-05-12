@@ -1,0 +1,14 @@
+id: adaptivetheme__login
+theme: adaptivetheme_
+weight: 0
+status: true
+langcode: en
+region: sidebar_first
+plugin: user_login_block
+settings:
+  label: 'User login'
+  id: user_login_block
+  provider: user
+  label_display: 0
+  cache:
+    max_age: 0

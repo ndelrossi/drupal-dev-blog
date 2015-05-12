@@ -1,0 +1,72 @@
+/**
+ * Forums
+ *  - see table.scss for generic table styles.
+ ========================================================================== */
+.forum .indent {
+  overflow: hidden;
+  margin-left: 33px;
+  margin-left: 2.0625rem;
+}
+.forum .title {
+  overflow: hidden;
+}
+.forum .icon {
+  margin: 1px 10px 0 0;
+  margin: 0.0625rem 0.625rem 0 0;
+  float: left;
+}
+.forum .icon svg {
+  height: 20px;
+  height: 1.25rem;
+  width: 20px;
+  width: 1.25rem;
+}
+
+.forum-header th {
+  white-space: nowrap;
+  font-weight: 400;
+}
+
+.forum [class*="__last-reply"] {
+  white-space: nowrap;
+}
+
+.forum [class*="__topics"],
+.forum [class*="__posts"],
+.forum [class*="__replies"] {
+  text-align: center;
+}
+
+.forum-list__description {
+  overflow: hidden;
+  font-size: 13px;
+  font-size: 0.8rem;
+  line-height: 18px;
+  line-height: 1.125rem;
+  margin: 7px 7px 7px 33px;
+  margin: 0.43162rem 0.43162rem 0.43162rem 2.0625rem;
+}
+[dir="rtl"] .forum-list__description {
+  margin: 7px 33px 7px 7px;
+  margin: 0.43162rem 2.0625rem 0.43162rem 0.43162rem;
+}
+
+[dir="rtl"] .forum-topic-navigation {
+  padding: 1em 3em 0 0;
+}
+
+[dir="rtl"] .forum-topic-navigation .topic-previous {
+  text-align: left;
+  float: right;
+}
+
+[dir="rtl"] .forum-topic-navigation .topic-next {
+  text-align: right;
+  float: left;
+}
+
+.action--forum {
+  list-style: none;
+}
+
+/*# sourceMappingURL=forum.css.map */

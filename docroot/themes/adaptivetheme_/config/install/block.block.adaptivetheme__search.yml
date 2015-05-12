@@ -1,0 +1,25 @@
+id: adaptivetheme__search
+theme: adaptivetheme_
+weight: -1
+status: true
+langcode: en
+region: sidebar_second
+plugin: search_form_block
+settings:
+  visibility:
+    request_path:
+      id: request_path
+      pages: ''
+      negate: false
+    user_role:
+      id: user_role
+      roles:
+        authenticated: authenticated
+        administrator: administrator
+      negate: false
+  label: Search
+  id: search_form_block
+  provider: search
+  label_display: 0
+  cache:
+    max_age: 0

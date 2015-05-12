@@ -1,0 +1,2283 @@
+@charset "UTF-8";
+/**
+ * Webfonts
+ ========================================================================== */
+/**
+ * Font Awesome - http://fortawesome.github.io
+ *
+ * To find all icon codes see the Font Awesome cheatsheet -
+ * http://fortawesome.github.io/Font-Awesome/cheatsheet/
+ *
+ * AT does not import all of fontawesome, only what we need to support more
+ * recent browsers:
+ *  - woff: Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+, Android 4.4+
+ *  - ttf: Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5, Android
+ *
+ * Installing local fonts:
+ *
+ * NOTE: due to licencing restrictions imposed by Drupal.org we must load
+ * the font files from a CDN. It is recommended you install the font files
+ * locally on your server (in your theme) and link to those instead.
+ *
+ * To install locally:
+
+ * First download FontAwesome from Github (link above), check the version
+ * this theme shipped with ($fa-version) or view the generated CSS and look
+ * for the cache identifier string at the end of the font file path, e.g.
+ * "?v=4.3.0". You need to download the version this theme shipped with or
+ * newer.
+ *
+ * Next create the directory: "styles/css/fonts", then place the .woff
+ * and .ttf files in the "fonts" directory.
+ *
+ * If you are using SASS you can uncomment the $fa-font-path !default
+ * in uikit > components > font-awesome > _variables.scss and comment
+ * out the Bootstrap CDN path. Amend the
+ *
+ * If you are using CSS directly, just edit the path manually to point to
+ * the files, e.g.:
+ * src: url("../fonts/fontawesome-webfont.woff")
+*/
+@font-face {
+  font-family: 'FontAwesome';
+  src: url("//netdna.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.woff?v=4.3.0") format("woff"), url("//netdna.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.ttf?v=4.3.0") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+/**
+ * Base
+ * - set element global styles, bascially whenever this element appears
+ * it should look like this by default.
+ ========================================================================== */
+html {
+  font-size: 100%;
+  line-height: 0.375em;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+html {
+  font-family: sans-serif;
+  line-height: 24px;
+  line-height: 1.5rem;
+}
+
+body {
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 24px;
+  line-height: 1.5rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+ul,
+ol,
+dd,
+dl,
+p,
+figure,
+pre,
+table,
+hr,
+form,
+fieldset {
+  margin: 0 0 18px;
+  margin: 0 0 1.13rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0 0 16px;
+  margin: 0 0 1rem;
+}
+
+h1, h2, h3 {
+  font-weight: 400;
+}
+
+h4, h5, h6 {
+  font-weight: 600;
+}
+
+h1, .h1 {
+  font-size: 42px;
+  font-size: 2.61803rem;
+  line-height: 48px;
+  line-height: 3rem;
+}
+
+h2, .h2 {
+  font-size: 29px;
+  font-size: 1.82838rem;
+  line-height: 36px;
+  line-height: 2.25rem;
+}
+
+h3, .h3 {
+  font-size: 26px;
+  font-size: 1.61803rem;
+  line-height: 30px;
+  line-height: 1.875rem;
+}
+
+h4, .h4 {
+  font-size: 18px;
+  font-size: 1.13rem;
+  line-height: 24px;
+  line-height: 1.5rem;
+}
+
+h5, .h5 {
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 24px;
+  line-height: 1.5rem;
+}
+
+h6, .h6 {
+  font-size: 11px;
+  font-size: 0.69838rem;
+  line-height: 18px;
+  line-height: 1.125rem;
+}
+
+h1 small, .h1 small {
+  font-size: 26px;
+  font-size: 1.61803rem;
+  line-height: 30px;
+  line-height: 1.875rem;
+}
+
+h2 small, .h2 small {
+  font-size: 18px;
+  font-size: 1.13rem;
+  line-height: 24px;
+  line-height: 1.5rem;
+}
+
+h3 small, .h3 small,
+h4 small, .h4 small {
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 24px;
+  line-height: 1.5rem;
+}
+
+p:empty {
+  display: none;
+}
+
+img {
+  height: auto;
+  line-height: 0;
+  display: inline-block;
+}
+
+img,
+embed,
+object,
+video {
+  max-width: 100%;
+}
+
+video {
+  width: 100% !important;
+  height: auto !important;
+}
+
+img,
+audio,
+canvas,
+video {
+  vertical-align: middle;
+}
+
+svg {
+  max-height: 100%;
+}
+
+figcaption {
+  font-size: 11px;
+  font-size: 0.69838rem;
+  line-height: 18px;
+  line-height: 1.125rem;
+  padding: 7px 0;
+  padding: 0.43162rem 0;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+a:hover, a:focus {
+  text-decoration: underline;
+}
+
+ul,
+ol,
+dl {
+  padding-left: 47px;
+  padding-left: 2.95838rem;
+  padding-right: 0;
+}
+
+dt {
+  font-weight: 600;
+}
+
+dd {
+  margin-left: 16px;
+  margin-left: 1rem;
+}
+[dir="rtl"] dd {
+  margin-left: 0;
+  margin-right: 16px;
+  margin-right: 1rem;
+}
+
+blockquote {
+  padding: 16px;
+  padding: 1rem;
+  margin-left: 47px;
+  margin-left: 2.95838rem;
+  margin-right: 0;
+  border-left: 5px solid;
+}
+blockquote p {
+  font-size: 18px;
+  font-size: 1.13rem;
+  line-height: 24px;
+  line-height: 1.5rem;
+  font-weight: 300;
+}
+blockquote p:first-child {
+  margin-top: 0;
+}
+blockquote p:first-child:before {
+  font-family: FontAwesome, sans-serif;
+  content: "";
+  display: inline-block;
+  padding: 0 5px 0 0;
+  margin: 0;
+  text-align: left;
+  width: 18px;
+  width: 1.13rem;
+}
+blockquote p:last-child {
+  margin-bottom: 0;
+}
+blockquote small {
+  display: block;
+  font-size: 11px;
+  font-size: 0.69838rem;
+  line-height: 18px;
+  line-height: 1.125rem;
+}
+blockquote small:before {
+  content: '\2014 \00A0';
+}
+blockquote.pull-right {
+  padding-right: 5.26316%;
+  padding-left: 0;
+  border-right: 5px solid;
+  border-left: 0;
+}
+blockquote.pull-right p,
+blockquote.pull-right small {
+  text-align: right;
+}
+blockquote.pull-right small:before {
+  content: '';
+}
+blockquote.pull-right small:after {
+  content: '\00A0 \2014';
+}
+
+hr {
+  height: 1px;
+  border: 0;
+  border-top: 1px solid;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Set hidden styles for non-supporting browers */
+*[hidden] {
+  display: none;
+}
+
+/* Webfont smoothing */
+:before {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/**
+ * Table Base
+ * Set base styles for table elements.
+ ========================================================================== */
+table {
+  padding: 0;
+  width: 100%;
+  border: 1px solid;
+  border-collapse: collapse;
+}
+table caption {
+  font-size: 18px;
+  font-size: 1.13rem;
+  line-height: 24px;
+  line-height: 1.5rem;
+}
+
+tr {
+  border: 1px solid;
+}
+
+caption,
+th,
+td {
+  text-align: left;
+}
+[dir*="rtl"] caption, [dir*="rtl"]
+th, [dir*="rtl"]
+td {
+  text-align: right;
+}
+
+thead tr {
+  font-weight: 600;
+}
+
+tr,
+td,
+th {
+  border-style: solid;
+}
+
+td,
+th {
+  padding: 7px;
+  padding: 0.43162rem;
+  vertical-align: middle;
+}
+
+/**
+ * Table Theme
+ * Style Drupal selectors for tables.
+ ========================================================================== */
+table.sticky-header {
+  z-index: 10;
+}
+table .view-table__details {
+  padding: 0;
+  margin: 0 0 16px;
+  margin: 0 0 1rem;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 24px;
+  line-height: 1.5rem;
+}
+table .view-table__details,
+table .view-table__details--summary {
+  border: 0;
+}
+table .view-table__details--description {
+  font-style: italic;
+}
+table ul {
+  margin: 0;
+}
+
+td,
+th {
+  border-width: 0;
+}
+
+thead .active img {
+  display: inline;
+}
+
+/**
+ * Form Base
+ * Set base styes for form elements.
+ ========================================================================== */
+input,
+select,
+button,
+textarea {
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 24px;
+  line-height: 1.5rem;
+}
+
+textarea,
+select,
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="email"],
+input[type="month"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="time"],
+input[type="url"],
+input[type="week"] {
+  max-width: 100%;
+  box-sizing: border-box;
+  border-radius: 2px;
+  border: 1px solid;
+  -webkit-transition: all, 0.15s, ease;
+          transition: all, 0.15s, ease;
+}
+textarea:focus,
+select:focus,
+input[type="date"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="email"]:focus,
+input[type="month"]:focus,
+input[type="number"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="text"]:focus,
+input[type="time"]:focus,
+input[type="url"]:focus,
+input[type="week"]:focus {
+  outline: 0;
+  outline: thin dotted \9;
+}
+textarea[disabled],
+select[disabled],
+input[type="date"][disabled],
+input[type="datetime"][disabled],
+input[type="datetime-local"][disabled],
+input[type="email"][disabled],
+input[type="month"][disabled],
+input[type="number"][disabled],
+input[type="password"][disabled],
+input[type="search"][disabled],
+input[type="tel"][disabled],
+input[type="text"][disabled],
+input[type="time"][disabled],
+input[type="url"][disabled],
+input[type="week"][disabled] {
+  cursor: not-allowed;
+}
+
+input {
+  min-width: 13px;
+  line-height: 1;
+  vertical-align: middle;
+  height: 29px;
+  height: 1.82838rem;
+  padding: 0 7px;
+  padding: 0 0.43162rem;
+}
+
+input[type="checkbox"], input[type="radio"] {
+  display: inline-block;
+  position: relative;
+  bottom: 1px;
+  bottom: 0.0625rem;
+  margin-left: 3px;
+  margin-left: 0.1875rem;
+}
+
+select {
+  height: 29px;
+  height: 1.82838rem;
+}
+
+textarea {
+  padding: 7px;
+  padding: 0.43162rem;
+}
+
+textarea,
+select[size],
+select[multiple] {
+  height: auto;
+}
+
+label {
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  display: block;
+}
+label.option {
+  font-weight: normal;
+  display: inline-block;
+}
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+details {
+  border: 1px solid;
+  border-radius: 2px;
+  margin: 16px 0;
+  margin: 1rem 0;
+}
+
+summary {
+  cursor: pointer;
+  padding: 10px;
+  padding: 0.61803rem;
+}
+
+button[disabled],
+input[disabled],
+select[disabled],
+select[disabled] option,
+select[disabled] optgroup,
+textarea[disabled],
+a.button_disabled {
+  box-shadow: none;
+  opacity: 0.7;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  cursor: default;
+}
+
+input:invalid,
+button:invalid,
+.button:invalid,
+select:invalid,
+textarea:invalid {
+  box-shadow: none;
+}
+
+/**
+ * Form Theme
+ ========================================================================== */
+.form-text[name="subject[0][value]"] {
+  width: 50%;
+}
+
+@media all and (max-width: 45em) {
+  .form-text[name="subject[0][value]"] {
+    width: 100%;
+  }
+}
+.form-select {
+  min-width: 50%;
+}
+
+.form-item,
+.form-radios,
+.form-checkboxes {
+  margin: 0 0 16px;
+  margin: 0 0 1rem;
+}
+
+.form-type-radio,
+.form-type-checkbox {
+  margin: 0 0 4px 6px;
+  margin: 0 0 0.26676rem 0.38197rem;
+}
+.form-type-radio .option,
+.form-type-checkbox .option {
+  padding: 4px 7px 0 29px;
+  padding: 0.26676rem 0.43162rem 0 1.82838rem;
+  margin-left: -25.88854px;
+  min-width: 50%;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 2px;
+}
+.form-type-radio .option:focus, .form-type-radio .option:hover,
+.form-type-checkbox .option:focus,
+.form-type-checkbox .option:hover {
+  cursor: pointer;
+}
+
+.form-actions {
+  margin: 16px 0;
+  margin: 1rem 0;
+}
+
+.field-type-text-long textarea {
+  border-radius: 2px 2px 0 0;
+}
+
+.filter-wrapper {
+  border-style: solid;
+  border-width: 1px;
+  border-top: 0;
+}
+
+.tips li {
+  list-style: none;
+}
+
+.tips,
+.description {
+  font-size: 11px;
+  font-size: 0.69838rem;
+  line-height: 18px;
+  line-height: 1.125rem;
+}
+
+h4.label,
+.form-composite > legend {
+  font-size: inherit;
+  font-weight: 600;
+  margin: 0;
+  padding: 0;
+}
+
+.form-required:after {
+  content: " \204E ";
+  line-height: 1;
+  vertical-align: super;
+}
+
+abbr.form-required, abbr.tabledrag-changed, abbr.ajax-changed {
+  border-bottom: none;
+}
+
+.form-item input.error,
+.form-item textarea.error,
+.form-item select.error {
+  border: 1px solid;
+}
+
+.container-inline {
+  display: inline-block;
+}
+.container-inline label:after {
+  content: ':';
+}
+.container-inline .form-actions, .container-inline.form-actions {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.form-type-radios .container-inline label:after {
+  content: none;
+}
+.form-type-radios .container-inline .form-type-radio {
+  margin: 0 16px;
+  margin: 0 1rem;
+}
+
+form .field-type-image .image-preview {
+  padding: 0;
+  background: transparent;
+  margin: 0 16px 16px 0;
+  margin: 0 1rem 1rem 0;
+}
+[dir="rtl"] form .field-type-image .image-preview {
+  margin: 0 0 16px 16px;
+  margin: 0 0 1rem 1rem;
+}
+form .field-type-image .image-widget-data > div:first-child {
+  margin-top: 0;
+}
+form .field-edit-link {
+  margin: 0 0.3em;
+}
+form .field-multiple-table {
+  margin: 0;
+}
+form .field-multiple-table .field-multiple-drag {
+  width: 30px;
+  padding-right: 0;
+}
+form .field-multiple-table .field-multiple-drag .tabledrag-handle {
+  padding-right: .5em;
+}
+[dir="rtl"] form .field-multiple-table .field-multiple-drag {
+  padding-left: 0;
+}
+[dir="rtl"] form .field-multiple-table .field-multiple-drag .tabledrag-handle {
+  padding-left: .5em;
+}
+form .field-add-more-submit {
+  margin: .5em 0 0;
+}
+
+.ui-autocomplete li.ui-menu-item a.ui-state-focus,
+.autocomplete li.ui-menu-item a.ui-state-hover {
+  background: #0072b9;
+  color: #fff;
+  margin: 0;
+}
+
+details > .details-wrapper {
+  margin: 16px;
+  margin: 1rem;
+}
+
+.collapse-processed > summary {
+  padding: 10px;
+  padding: 0.61803rem;
+}
+.collapse-processed > summary:before {
+  font-family: FontAwesome, sans-serif;
+  content: "";
+  float: left;
+  margin: -1px 0 0;
+  height: 16px;
+  height: 1rem;
+  width: 16px;
+  width: 1rem;
+}
+[dir="rtl"] .collapse-processed > summary:before {
+  float: right;
+}
+
+.collapse-processed:not([open]) > summary:before {
+  content: "";
+}
+[dir="rtl"] .collapse-processed:not([open]) > summary:before {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0);
+  -webkit-transform: scale(-1, 1);
+  -ms-transform: scale(-1, 1);
+  transform: scale(-1, 1);
+}
+
+.vertical-tabs {
+  background: #ffffff;
+}
+
+.block-list-secondary {
+  border-bottom-width: 1px;
+  box-sizing: border-box;
+  padding: 0 11px;
+  padding: 0 0.69838rem;
+}
+
+.reset-appearance {
+  -webkit-transition: none;
+          transition: none;
+  box-shadow: none;
+  border-radius: 0;
+}
+.reset-appearance:hover, .reset-appearance:focus {
+  background: none;
+  color: inherit;
+}
+
+/**
+ * Buttons
+ * We include button styling seperate (from _forms.scss, Form Base/Theme in base.css)
+ * mainly because the form styles are quite long already and we often want to add
+ * unique button variants.
+ *
+ *  - applies to elements with class "button", includes styles for:
+ *  - input buttons
+ *  - anchor links styled as buttons
+ *  - drop buttons
+ *  - action link buttons
+ ========================================================================== */
+button,
+.button {
+  max-width: 100%;
+  width: auto;
+  position: relative;
+  box-sizing: border-box;
+  height: 29px;
+  height: 1.82838rem;
+  padding: 0 10px;
+  padding: 0 0.61803rem;
+  border-radius: 2px;
+  border: 1px solid;
+  -webkit-transition: background-color, .15s, ease-in-out;
+          transition: background-color, .15s, ease-in-out;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  font-weight: 400;
+  line-height: 29px;
+  line-height: 1.82838rem;
+  white-space: nowrap;
+}
+button:hover, button:focus,
+.button:hover,
+.button:focus {
+  text-decoration: none;
+}
+
+.button-action {
+  display: inline-block;
+  vertical-align: bottom;
+}
+.button-action:before {
+  font-family: FontAwesome, sans-serif;
+  content: "";
+  font-size: 11px;
+  font-size: 0.69838rem;
+  line-height: 18px;
+  line-height: 1.125rem;
+  padding-right: 4px;
+  padding-right: 0.25rem;
+  display: inline-block;
+  vertical-align: text-bottom;
+}
+.button-action[data-drupal-link-system-path="user/login"]:before {
+  content: "";
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 24px;
+  line-height: 1.5rem;
+  padding-right: 7px;
+  padding-right: 0.4375rem;
+  vertical-align: baseline;
+}
+
+/* Drop buttons */
+.js .dropbutton-widget {
+  border: 1px solid;
+  border-radius: 2px;
+}
+
+.js .dropbutton-wrapper {
+  display: block;
+  min-height: 2em;
+  margin-right: 4px;
+  position: relative;
+}
+
+[dir="rtl"] .js .dropbutton-wrapper {
+  margin-right: 0;
+  margin-left: 4px;
+}
+
+.dropbutton input {
+  text-align: left;
+  height: 27px;
+  height: 1.70338rem;
+}
+.dropbutton .dropbutton-action > * {
+  white-space: nowrap;
+  line-height: normal;
+  padding: 0 10px;
+  padding: 0 0.61803rem;
+}
+.dropbutton .dropbutton-action a {
+  padding: 2px 10px;
+  padding: 0.125rem 0.61803rem;
+}
+.dropbutton .secondary-action {
+  border-top: 1px solid;
+  border-radius: 0 0 0 2px;
+}
+.dropbutton .secondary-action .button {
+  border: 0;
+  width: 100%;
+}
+.dropbutton .secondary-action .button:hover, .dropbutton .secondary-action .button:focus {
+  border-radius: 0 0 0 2px;
+}
+.dropbutton .dropbutton-toggle button {
+  background: none;
+  box-shadow: none;
+}
+.dropbutton .dropbutton-toggle button:hover, .dropbutton .dropbutton-toggle button:focus, .dropbutton .dropbutton-toggle button:actived {
+  background: none;
+  box-shadow: none;
+}
+[dir="rtl"] .dropbutton {
+  margin: 0 3px 0 0;
+}
+[dir="rtl"] .dropbutton input {
+  text-align: right;
+}
+
+.dropbutton-multiple .dropbutton {
+  border-right: 1px solid;
+}
+.dropbutton-multiple .dropbutton .dropbutton-action > * {
+  margin-right: 0;
+  border: 0;
+}
+.dropbutton-multiple .dropbutton .dropbutton-action .button {
+  border-radius: 2px 0 0 2px;
+  width: 100%;
+}
+[dir="rtl"] .dropbutton-multiple .dropbutton {
+  border-left: 1px solid;
+  border-right: 0;
+}
+[dir="rtl"] .dropbutton-multiple .dropbutton .dropbutton-action > * {
+  margin-left: 0;
+}
+.dropbutton-multiple.open .dropbutton-action .button {
+  border-radius: 2px 0 0 0;
+}
+.dropbutton-multiple .dropbutton .secondary-action .button {
+  border-radius: 0 0 0 2px;
+}
+.dropbutton-multiple .dropbutton .secondary-action .button:hover, .dropbutton-multiple .dropbutton .secondary-action .button:focus {
+  border-radius: 0 0 0 2px;
+}
+
+/**
+ * Show buttons as links.
+ */
+button.link {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  font-size: 1em;
+}
+
+label button.link {
+  font-weight: bold;
+}
+
+/**
+ * Styles for link buttons and action links. TODO.
+ */
+li[class*="action--"] {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0;
+  margin: 1rem 0;
+}
+
+/**
+ * Progress bar.
+ * @see progress.js
+ ========================================================================== */
+.progress__track {
+  border-color: #b3b3b3;
+  border-radius: 10em;
+  background-color: #f2f1eb;
+  background-image: -webkit-linear-gradient(#e7e7df, #f0f0f0);
+  background-image: linear-gradient(#e7e7df, #f0f0f0);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.16);
+}
+
+.progress__bar {
+  border: 1px #07629a solid;
+  background: #057ec9;
+  background-image: -webkit-linear-gradient(top, transparent, rgba(0, 0, 0, 0.15)), -webkit-linear-gradient(left top, #0094f0 0%, #0094f0 25%, #007ecc 25%, #007ecc 50%, #0094f0 50%, #0094f0 75%, #0094f0 100%);
+  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15)), -webkit-linear-gradient(left top, #0094f0 0%, #0094f0 25%, #007ecc 25%, #007ecc 50%, #0094f0 50%, #0094f0 75%, #0094f0 100%);
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15)), linear-gradient(to right bottom, #0094f0 0%, #0094f0 25%, #007ecc 25%, #007ecc 50%, #0094f0 50%, #0094f0 75%, #0094f0 100%);
+  background-size: 40px 40px;
+  margin-top: -1px;
+  margin-left: -1px;
+  padding: 0 1px;
+  height: 16px;
+  border-radius: 10em;
+  -webkit-animation: animate-stripes 3s linear infinite;
+  -moz-animation: animate-stripes 3s linear infinite;
+  -webkit-transition: width 0.5s ease-out;
+  transition: width 0.5s ease-out;
+}
+
+/**
+ * Progress bar animations.
+ */
+@-webkit-keyframes animate-stripes {
+  0% {
+    background-position: 0 0, 0 0;
+  }
+  100% {
+    background-position: 0 0, -80px 0;
+  }
+}
+@keyframes animate-stripes {
+  0% {
+    background-position: 0 0, 0 0;
+  }
+  100% {
+    background-position: 0 0, -80px 0;
+  }
+}
+/**
+ * Form Tables
+ * Table select and table drag are form elements.
+ ========================================================================== */
+tr.drag {
+  background-color: #fffff1;
+}
+tr.drag-previous {
+  background-color: #ffd;
+}
+
+a.tabledrag-handle .handle {
+  height: auto;
+  margin: -0.2em 0.5em 0;
+  width: auto;
+}
+
+body div.tabledrag-changed-warning {
+  margin-bottom: 0.5em;
+}
+
+tr.selected td {
+  background: #ffc;
+}
+
+td.checkbox,
+th.checkbox {
+  text-align: center;
+}
+
+tr .form-item {
+  margin-top: 0;
+  margin-bottom: 0;
+  white-space: nowrap;
+}
+
+/**
+ * Images
+ ========================================================================== */
+img.align-left,
+figure.align-left {
+  margin: 0 16px 16px 0;
+  margin: 0 1rem 1rem 0;
+}
+img.align-right,
+figure.align-right {
+  margin: 0 0 16px 16px;
+  margin: 0 0 1rem 1rem;
+}
+img.align-center,
+figure.align-center {
+  margin-bottom: 16px;
+  margin-bottom: 1rem;
+}
+img[class*="align-"],
+figure[class*="align-"] {
+  clear: both;
+}
+
+/**
+ * Media
+ * - styles for media objects such as iframe, video, embedding codes etc.
+ ========================================================================== */
+.embed-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+}
+.embed-container iframe,
+.embed-container object,
+.embed-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/**
+ * List Styles
+ ========================================================================== */
+ul.inline, ul.links.inline {
+  padding: 0;
+}
+ul.inline:before, ul.inline:after, ul.links.inline:before, ul.links.inline:after {
+  content: " ";
+  display: table;
+}
+ul.inline:after, ul.links.inline:after {
+  clear: both;
+}
+ul.inline li {
+  float: right;
+  margin: 0 0 0 16px;
+  margin: 0 0 0 1rem;
+  list-style: none;
+}
+ul.inline li ul,
+ul.inline li ol {
+  display: none;
+}
+[dir="rtl"] ul.inline li {
+  margin: 0 16px 0 0;
+}
+
+.item-list ul,
+.item-list ol,
+.item-list li {
+  list-style: none;
+}
+
+.list-horizontal li {
+  float: left;
+  margin: 0 16px 0 16px;
+  margin: 0 1rem 0 1rem;
+  list-style: none;
+}
+.list-horizontal li ul,
+.list-horizontal li ol {
+  display: none;
+}
+
+.list-multicolumn {
+  padding: 0;
+  list-style: none;
+}
+.list-multicolumn li {
+  list-style-image: none;
+  list-style-type: none;
+  margin-left: 0;
+}
+.list-multicolumn:before, .list-multicolumn:after {
+  content: " ";
+  display: table;
+}
+.list-multicolumn:after {
+  clear: both;
+}
+.list-multicolumn > li {
+  font-weight: 700;
+}
+.list-multicolumn ul, .list-multicolumn ol {
+  font-weight: 400;
+  padding: 0;
+}
+
+@media all and (max-width: 60em) {
+  .list-multicolumn {
+    list-style: none;
+  }
+  .list-multicolumn li {
+    list-style-image: none;
+    list-style-type: none;
+    margin-left: 0;
+  }
+  .list-multicolumn:before, .list-multicolumn:after {
+    content: " ";
+    display: table;
+  }
+  .list-multicolumn:after {
+    clear: both;
+  }
+  .list-multicolumn > li {
+    width: 12em;
+    float: left;
+  }
+  .list-multicolumn ul, .list-multicolumn ol {
+    padding: 0;
+  }
+  .list-multicolumn a {
+    display: block;
+  }
+}
+@media all and (max-width: 60em) {
+  .dl-horizontal dt {
+    float: left;
+    clear: left;
+    text-align: left;
+    width: 11em;
+  }
+  .dl-horizontal dt:after {
+    content: ":";
+  }
+  .dl-horizontal dd {
+    margin-left: 12em;
+    overflow: hidden;
+  }
+}
+/**
+ * Page
+ *  - for page.html.twig and region markup.
+ ========================================================================== */
+.page {
+  position: relative;
+  min-height: 100%;
+  min-width: 100%;
+}
+
+.l-rw {
+  padding: 0 16px;
+  padding: 0 1rem;
+}
+
+.l-r {
+  -webkit-transition: all, 0.15s, ease;
+          transition: all, 0.15s, ease;
+}
+.l-r:before, .l-r:after {
+  content: " ";
+  display: table;
+}
+.l-r:after {
+  clear: both;
+}
+
+.page-top,
+.page-bottom {
+  padding: 0;
+  margin: 0;
+}
+
+.attribution {
+  text-align: right;
+}
+.attribution .attribution__link {
+  text-decoration: none;
+  font-size: 11px;
+  font-size: 0.69838rem;
+  line-height: 18px;
+  line-height: 1.125rem;
+}
+
+.feed-icon {
+  display: block;
+  width: 16px;
+  width: 1rem;
+  height: 16px;
+  height: 1rem;
+}
+
+/**
+ * Branding styles
+ *  - Drupal core branding block.
+ ========================================================================== */
+.site-branding:before, .site-branding:after {
+  content: " ";
+  display: table;
+}
+.site-branding:after {
+  clear: both;
+}
+.site-branding__text, .site-branding__name, .site-branding__slogan {
+  display: block;
+}
+.site-branding__logo-link {
+  display: inline-block;
+  padding: 6px 0;
+  padding: 0.38197rem 0;
+}
+.site-branding__text {
+  margin: 0;
+}
+.site-branding__name {
+  font-size: 26px;
+  font-size: 1.61803rem;
+  line-height: 30px;
+  line-height: 1.875rem;
+  font-weight: 400;
+}
+.site-branding__name-link:hover, .site-branding__name-link:focus {
+  text-decoration: none;
+}
+.site-branding__slogan {
+  font-style: normal;
+}
+
+/**
+ * Messages
+ *  - style system messages such as status, warning and error.
+ ========================================================================== */
+.messages {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  padding: 16px;
+  padding: 1rem;
+}
+.messages + .messages {
+  margin-top: 18.08px;
+  margin-top: 6px;
+  margin-top: 0.375rem;
+}
+.messages .container {
+  box-sizing: border-box;
+}
+
+.messages__list {
+  list-style: none;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+}
+.messages__list + .messages__item {
+  margin-top: 6px;
+  margin-top: 0.375rem;
+}
+.messages__list .item-list ul {
+  margin: 18px 29px;
+  margin: 1.13rem 1.82838rem;
+}
+.messages__list .item-list ul li {
+  list-style: square;
+}
+
+/* Success (status) */
+.messages--status,
+table tr.ok {
+  background-color: #f3faef;
+}
+
+.messages--status,
+.ok {
+  color: #325e1c;
+}
+
+/* Warning */
+.messages--warning,
+table tr.warning {
+  background-color: #fdf8ed;
+}
+
+.messages--warning,
+.warning {
+  color: #734c00;
+}
+
+/* Error */
+.messages--error,
+table tr.error {
+  background-color: #fcf4f2;
+}
+
+.messages--error,
+.error {
+  color: #a51b00;
+}
+
+.messages--status,
+.messages--warning,
+.messages--error {
+  background-image: none;
+}
+
+/* RTL */
+[dir="rtl"] .messages {
+  text-align: right;
+}
+
+/* Message icons */
+.messages .icon:before {
+  font-family: FontAwesome, sans-serif;
+  float: left;
+  vertical-align: top;
+  padding: 0 11px 0 0;
+  padding: 0 0.69838rem 0 0;
+}
+
+[dir="rtl"] .messages .icon:before {
+  padding: 0 0 0 11px;
+  padding: 0 0 0 0.69838rem;
+  float: right;
+}
+
+.icon-status:before {
+  content: "";
+}
+
+.icon-warning:before {
+  content: "";
+}
+
+.icon-error:before {
+  content: "";
+}
+
+/**
+ * Tabs (local tasks)
+ * TODO: fix selectors when https://www.drupal.org/node/507488 lands. This will
+ * mean the tabs are now a block, and we probably need some template revisions
+ * also.
+ ========================================================================== */
+.tabs {
+  margin: 0;
+  padding: 0;
+}
+
+.pr-temporary-tabs .local-tasks {
+  margin-bottom: 16px;
+  margin-bottom: 1rem;
+}
+.pr-temporary-tabs .l-rw {
+  padding: 26px 16px 0;
+  padding: 1.61803rem 1rem 0;
+}
+.pr-temporary-tabs ul:before, .pr-temporary-tabs ul:after {
+  content: " ";
+  display: table;
+}
+.pr-temporary-tabs ul:after {
+  clear: both;
+}
+.pr-temporary-tabs ul.tabs--primary {
+  margin-bottom: 0;
+}
+@media all and (max-width: 60em) {
+  .pr-temporary-tabs ul.tabs--primary {
+    list-style: none;
+  }
+  .pr-temporary-tabs ul.tabs--primary li {
+    list-style-image: none;
+    list-style-type: none;
+    margin-left: 0;
+  }
+  .pr-temporary-tabs ul.tabs--primary:before, .pr-temporary-tabs ul.tabs--primary:after {
+    content: " ";
+    display: table;
+  }
+  .pr-temporary-tabs ul.tabs--primary:after {
+    clear: both;
+  }
+  .pr-temporary-tabs ul.tabs--primary li:first-child a {
+    border-radius: 2px 2px 0 0;
+  }
+  .pr-temporary-tabs ul.tabs--primary li:last-child a {
+    border-radius: 0 0 2px 2px;
+  }
+  .pr-temporary-tabs ul.tabs--primary li a {
+    color: #ffffff;
+    background-color: #0066cc;
+    border-color: #0066cc;
+    opacity: 0.9;
+    box-shadow: rgba(255, 255, 255, 0.5) 0 1px 0 inset;
+    border: 1px solid #0066cc;
+    margin-bottom: -1px;
+    padding: 7px 16px;
+    padding: 0.43162rem 1rem;
+    text-align: left;
+    text-decoration: none;
+    font-weight: 400;
+    line-height: 1;
+    width: auto;
+    display: block;
+    position: relative;
+    -webkit-transition: background-color, .15s, ease-in-out;
+            transition: background-color, .15s, ease-in-out;
+  }
+  .pr-temporary-tabs ul.tabs--primary li a:link, .pr-temporary-tabs ul.tabs--primary li a:visited {
+    color: #ffffff;
+    background-color: #0066cc;
+    border-color: #0066cc;
+  }
+  .pr-temporary-tabs ul.tabs--primary li a:hover, .pr-temporary-tabs ul.tabs--primary li a:focus, .pr-temporary-tabs ul.tabs--primary li a:active, .pr-temporary-tabs ul.tabs--primary li a.active {
+    color: #ffffff;
+    background-color: #0066cc;
+    border-color: #0066cc;
+    opacity: 1;
+  }
+  .pr-temporary-tabs ul.tabs--secondary {
+    list-style: none;
+    text-align: left;
+  }
+  .pr-temporary-tabs ul.tabs--secondary li {
+    list-style-image: none;
+    list-style-type: none;
+    margin-left: 0;
+  }
+  .pr-temporary-tabs ul.tabs--secondary:before, .pr-temporary-tabs ul.tabs--secondary:after {
+    content: " ";
+    display: table;
+  }
+  .pr-temporary-tabs ul.tabs--secondary:after {
+    clear: both;
+  }
+  .pr-temporary-tabs ul.tabs--secondary a {
+    display: inline-block;
+    line-height: 1;
+    color: #363636;
+    border-bottom: 1px solid transparent;
+    border-left: 3px solid;
+    padding: 11px 16px 7px 14px;
+    padding: 0.69838rem 1rem 0.43162rem 0.875rem;
+    -webkit-transition: background-color, .15s, ease-out;
+            transition: background-color, .15s, ease-out;
+  }
+  .pr-temporary-tabs ul.tabs--secondary a:hover, .pr-temporary-tabs ul.tabs--secondary a:focus {
+    text-decoration: none;
+    color: #363636;
+    border-bottom: 1px solid #cccccc;
+  }
+  .pr-temporary-tabs ul.tabs--secondary a.active {
+    border-bottom: 1px solid #cccccc;
+  }
+  .pr-temporary-tabs ul.tabs--secondary a.active:hover, .pr-temporary-tabs ul.tabs--secondary a.active:focus {
+    color: #363636;
+  }
+}
+@media all and (min-width: 60.063em) {
+  .pr-temporary-tabs ul.tabs--primary {
+    border-bottom: 1px solid #cccccc;
+  }
+  .pr-temporary-tabs ul.tabs--primary li {
+    float: left;
+    margin: 0 0 0 0;
+    list-style: none;
+  }
+  .pr-temporary-tabs ul.tabs--primary li ul,
+  .pr-temporary-tabs ul.tabs--primary li ol {
+    display: none;
+  }
+  .pr-temporary-tabs ul.tabs--primary li {
+    margin-bottom: -1px;
+  }
+  .pr-temporary-tabs ul.tabs--primary li:first-child a {
+    border-radius: 2px 0 0 0;
+  }
+  .pr-temporary-tabs ul.tabs--primary li:last-child a {
+    border-radius: 0 2px 0 0;
+  }
+  .pr-temporary-tabs ul.tabs--primary a {
+    display: block;
+    line-height: 1;
+    color: #363636;
+    background: #fafafa;
+    border: 1px solid #cccccc;
+    padding: 7px 16px;
+    padding: 0.43162rem 1rem;
+    -webkit-transition: background-color, .15s, ease-in-out;
+            transition: background-color, .15s, ease-in-out;
+    box-shadow: rgba(255, 255, 255, 0.5) 0 1px 0 inset;
+    margin-right: -1px;
+  }
+  .pr-temporary-tabs ul.tabs--primary a:hover, .pr-temporary-tabs ul.tabs--primary a:focus {
+    color: #363636;
+    background: #ededed;
+    text-decoration: none;
+  }
+  .pr-temporary-tabs ul.tabs--primary a.active {
+    color: #363636;
+    background: none;
+    border-bottom-color: #f7f7f7;
+  }
+  .pr-temporary-tabs ul.tabs--primary a.active:hover, .pr-temporary-tabs ul.tabs--primary a.active:focus {
+    color: #363636;
+    background: none;
+  }
+  .pr-temporary-tabs ul.tabs--secondary {
+    padding: 0;
+  }
+  .pr-temporary-tabs ul.tabs--secondary li {
+    float: left;
+    margin: 0 7px 0 7px;
+    margin: 0 0.43162rem 0 0.43162rem;
+    list-style: none;
+  }
+  .pr-temporary-tabs ul.tabs--secondary li ul,
+  .pr-temporary-tabs ul.tabs--secondary li ol {
+    display: none;
+  }
+  .pr-temporary-tabs ul.tabs--secondary a {
+    display: block;
+    line-height: 1;
+    color: #363636;
+    border-bottom: 1px solid transparent;
+    padding: 7px 16px;
+    padding: 0.43162rem 1rem;
+    -webkit-transition: background-color, .15s, ease-in-out;
+            transition: background-color, .15s, ease-in-out;
+  }
+  .pr-temporary-tabs ul.tabs--secondary a:hover, .pr-temporary-tabs ul.tabs--secondary a:focus {
+    text-decoration: none;
+    color: #363636;
+    border-bottom: 1px solid #cccccc;
+  }
+  .pr-temporary-tabs ul.tabs--secondary a.active {
+    border-bottom: 1px solid #cccccc;
+  }
+  .pr-temporary-tabs ul.tabs--secondary a.active:hover, .pr-temporary-tabs ul.tabs--secondary a.active:focus {
+    color: #363636;
+  }
+}
+
+/**
+ * Breadcrumbs
+ ========================================================================== */
+.breadcrumb__title {
+  font-size: inherit;
+}
+.breadcrumb__title,
+.breadcrumb ol,
+.breadcrumb li {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+.breadcrumb li {
+  list-style: none;
+}
+.breadcrumb li:before {
+  font-family: FontAwesome, sans-serif;
+  content: "";
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  width: 16px;
+  width: 1rem;
+}
+[dir="rtl"] .breadcrumb li:before {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0);
+  -webkit-transform: scale(-1, 1);
+  -ms-transform: scale(-1, 1);
+  transform: scale(-1, 1);
+}
+.breadcrumb li:first-child:before {
+  content: none;
+}
+.breadcrumb a {
+  text-decoration: none;
+}
+
+/**
+ * Pagers
+ * - Full system pager.
+ * - Views mini pager.
+ ========================================================================== */
+.pager {
+  margin: 16px 0;
+  margin: 1rem 0;
+}
+
+.pager__items {
+  padding: 0;
+}
+.pager__items:before, .pager__items:after {
+  content: " ";
+  display: table;
+}
+.pager__items:after {
+  clear: both;
+}
+@media all and (min-width: 60.063em) {
+  .pager__items {
+    margin-left: auto;
+    margin-right: auto;
+    display: table;
+  }
+}
+
+.pager__item {
+  float: left;
+  margin: 1px 1px 1px 1px;
+  margin: 0.0625rem 0.0625rem 0.0625rem 0.0625rem;
+  list-style: none;
+}
+.pager__item ul,
+.pager__item ol {
+  display: none;
+}
+
+@media all and (max-width: 60em) {
+  .pager__item {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.pager__link {
+  display: block;
+  border: 1px solid;
+  border-radius: 2px;
+  -webkit-transition: background-color, .15s, ease-in-out;
+          transition: background-color, .15s, ease-in-out;
+}
+.pager__link:focus, .pager__link:hover {
+  text-decoration: none;
+}
+
+.pager__link {
+  padding: 2px 11px 0;
+  padding: 0.125rem 0.69838rem 0;
+}
+
+@media all and (max-width: 60em) {
+  .pager__item--next {
+    clear: both;
+  }
+}
+
+@media all and (max-width: 60em) {
+  .pager__item--num {
+    width: auto;
+  }
+}
+
+@media all and (max-width: 60em) {
+  .pager__item--num-first {
+    clear: both;
+  }
+}
+
+/**
+ * Labels.
+ *  -  for example "new" mark on comments, tags etc.
+ *
+ *  TODO: fix this stuff up, its just a copy/paste from system.theme.css at the moment.
+ ========================================================================== */
+.more-link {
+  text-align: right;
+  display: inline-block;
+}
+.more-link:after {
+  font-family: FontAwesome, sans-serif;
+  content: "";
+  display: inline-block;
+  vertical-align: bottom;
+  padding: 0;
+  text-align: right;
+  width: 10px;
+  width: 0.61803rem;
+}
+[dir="rtl"] .more-link:after {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0);
+  -webkit-transform: scale(-1, 1);
+  -ms-transform: scale(-1, 1);
+  transform: scale(-1, 1);
+}
+
+.more-help-link {
+  text-align: left;
+}
+[dir="rtl"] .more-help-link {
+  text-align: right;
+}
+
+.filter-help a:after {
+  position: static;
+  top: auto;
+  right: auto;
+  /* LTR */
+  display: block;
+  width: auto;
+  height: auto;
+  background: transparent;
+  margin: 0;
+}
+[dir="rtl"] .filter-help a:after {
+  left: auto;
+}
+
+.filter-help a,
+.more-help-link a {
+  background: transparent;
+  margin-right: 0;
+}
+.filter-help a:after,
+.more-help-link a:after {
+  font-family: FontAwesome, sans-serif;
+  content: "";
+  float: right;
+  padding: 0 1px;
+  text-align: right;
+  width: 16px;
+  width: 1rem;
+}
+[dir="rtl"] .filter-help a, [dir="rtl"]
+.more-help-link a {
+  background: transparent;
+}
+
+/**
+ * Blocks
+ * Base styles for block templates.
+ ========================================================================== */
+.block {
+  margin: 26px 0;
+  margin: 1.61803rem 0;
+}
+
+/**
+ * Menus
+ *  - style Drupal core block menus.
+ *  - for the drop menu and other responsive menus see the mixins and the
+ *    _component.menu.responsive.scss / responsive-menus.css.
+ ========================================================================== */
+.menu {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.menu .menu {
+  padding-left: 16px;
+  padding-left: 1rem;
+}
+[dir="rtl"] .menu li.menu-item--collapsed > a:after {
+  content: "";
+}
+
+.menu-item {
+  text-align: left;
+}
+.menu-item--collapsed > a:after, .menu-item--expanded > a:after {
+  font-family: FontAwesome, sans-serif;
+  float: right;
+  padding: 0 1px;
+  text-align: right;
+  width: 16px;
+  width: 1rem;
+}
+.menu-item--collapsed > a:after {
+  content: "";
+}
+.menu-item--expanded > a:after {
+  content: "";
+}
+.menu-item a {
+  display: block;
+  padding: 7px 0;
+  padding: 0.43162rem 0;
+}
+.menu-item a:hover, .menu-item a:focus {
+  text-decoration: none;
+}
+
+/**
+ * Fields
+ * Base styles for field templates.
+ * SEE: image and taxonomy field styles as these both have unqique
+ * template html markup and selectors.
+ ========================================================================== */
+.field__label {
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 24px;
+  line-height: 1.5rem;
+  margin: 0;
+}
+
+.field-label-inline .field__label {
+  margin: 0;
+  display: inline-block;
+  padding: 0 4px 0 0;
+  padding: 0 0.26676rem 0 0;
+}
+.field-label-inline .field__label:after {
+  content: ":";
+}
+[dir="rtl"] .field-label-inline .field__label {
+  padding: 0 0 0 4px;
+  padding: 0 0 0 0.26676rem;
+}
+.field-label-inline .field__items {
+  display: inline-block;
+}
+
+.field-label-above .field__label,
+.field-label-above .field__items {
+  display: block;
+}
+
+/**
+ * Field Image
+ ========================================================================== */
+.field-type-image figure {
+  margin-bottom: 16px;
+  margin-bottom: 1rem;
+}
+.field-type-image .align-none,
+.field-type-image .align-left {
+  margin: 0 16px 16px 0;
+  margin: 0 1rem 1rem 0;
+}
+.field-type-image .align-none figcaption,
+.field-type-image .align-left figcaption {
+  text-align: left;
+}
+.field-type-image .align-center {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 16px;
+  margin-bottom: 1rem;
+}
+.field-type-image figure.align-center {
+  display: table;
+}
+.field-type-image .align-right {
+  margin: 0 0 16px 16px;
+  margin: 0 0 1rem 1rem;
+}
+.field-type-image .align-right figcaption {
+  text-align: left;
+}
+.field-type-image .float-none {
+  float: none !important;
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+}
+.field-type-image + .field-type-image .field__label {
+  clear: both;
+}
+
+/**
+ * File icons
+ * AT unsets Drupal core file field CSS for image icons and replaces them
+ * with FontAwesome icons.
+ ========================================================================== */
+.file {
+  display: block;
+}
+.file a {
+  text-decoration: none;
+  -ms-word-break: break-all;
+  word-break: break-all;
+  word-break: break-word;
+  -webkit-hyphens: auto;
+     -moz-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
+}
+.file a:before {
+  font-family: FontAwesome, sans-serif;
+  content: "";
+  padding-right: 0.5em;
+}
+
+.file--package-x-generic a:before {
+  content: "";
+}
+
+.file--x-office-spreadsheet a:before,
+.file [href$='.numbers']:before {
+  content: "";
+}
+
+.file--x-office-document a:before,
+.file [href$='.pages']:before {
+  content: "";
+}
+
+.file--x-office-presentation a:before,
+.file [href$='.key']:before {
+  content: "";
+}
+
+.file--text-x-script:before,
+.file--text-html:before,
+.file [href*='.js']:before,
+.file [href*='.css']:before,
+.file [href*='.scss']:before,
+.file [href*='.sass']:before,
+.file [href*='.less']:before,
+.file [href*='.rb']:before,
+.file [href*='.php']:before,
+.file [href*='.inc']:before,
+.file [href*='.htm']:before,
+.file [href*='.html']:before,
+.file [href*='.xml']:before,
+.file [href*='.twig']:before,
+.file [href*='.theme']:before,
+.file [href*='.module']:before,
+.file [href*='.config']:before,
+.file [href*='.install']:before,
+.file [href*='.yml']:before,
+.file [href*='.json']:before,
+.file [href*='.sh']:before {
+  content: "";
+}
+
+.file--text a:before,
+.file--text-plain a:before {
+  content: "";
+}
+
+.file--application-pdf a:before {
+  content: "";
+}
+
+.file--audio a:before {
+  content: "";
+}
+
+.file--video a:before {
+  content: "";
+}
+
+.file--image a:before {
+  content: "";
+}
+
+/**
+ * Content Types (nodes)
+ *  - in Drupal a content type is a bunch of fields we use to enter and display
+ *    content, such as pages, blog posts, forum posts and so on. Each of those
+ *    is usually a content type you create in the Drupal admin.
+ *  - an instance of a content type (e.g. a single blog post) is called a node,
+ *    the root template is called node.html.twg and the base selector is .node {}
+ ========================================================================== */
+.node {
+  margin-bottom: 16px;
+  margin-bottom: 1rem;
+  padding: 16px;
+  padding: 1rem;
+  border-radius: 2px;
+}
+.node:before, .node:after {
+  content: " ";
+  display: table;
+}
+.node:after {
+  clear: both;
+}
+
+.node--sticky {
+  padding: 0;
+}
+
+.node--view-mode-full .node__title {
+  margin: 0 0 16px;
+  margin: 0 0 1rem;
+}
+
+.node__meta {
+  margin: 16px 0;
+  margin: 1rem 0;
+}
+.node__meta.node__meta--has-author-picture {
+  line-height: 48px;
+  line-height: 3rem;
+}
+.node__meta .field-type-image {
+  float: left;
+  margin: 0 11px 0 0;
+  margin: 0 0.69838rem 0 0;
+}
+.node__meta .field-type-image img {
+  width: auto;
+  height: 48px;
+  height: 3rem;
+}
+.node__meta .field-type-image__figure {
+  margin: 0;
+  padding: 0;
+}
+.node__meta article:empty {
+  display: none;
+}
+
+.node__author {
+  display: inline;
+  font-style: normal;
+}
+
+.node__footer {
+  clear: both;
+}
+.node__footer:before, .node__footer:after {
+  content: " ";
+  display: table;
+}
+.node__footer:after {
+  clear: both;
+}
+
+/**
+ * User forms, e.g. login, register, request password, user login block form.
+ ========================================================================== */
+.user-login-form .form-text {
+  width: 100%;
+}
+
+/**
+ * User Profiles
+ ========================================================================== */
+/**
+ * Views
+ ========================================================================== */
+.views-view-grid .views-col {
+  padding-right: 18px;
+  padding-right: 1.13rem;
+  margin-bottom: 18px;
+  margin-bottom: 1.13rem;
+  box-sizing: border-box;
+}
+.views-view-grid .views-col:last-child {
+  padding-right: 0;
+}
+
+/**
+ * Publishing states.
+ ========================================================================== */
+[class*="--unpublished"] {
+  background-color: #ffdbdb;
+  opacity: 0.7;
+}
+[class*="--unpublished"]:hover, [class*="--unpublished"]:focus {
+  opacity: 1;
+}
+[class*="--unpublished"] p.unpublished__title {
+  font-size: 47px;
+  font-size: 2.95838rem;
+  line-height: 54px;
+  line-height: 3.375rem;
+  font-family: Impact, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;
+  text-align: center;
+  color: #fff4f4;
+}
+
+[class*="preview"] {
+  background-color: #ffffea;
+}
+
+/**
+ * Print
+ * This aggressively styles print output, you can remove all of it if you want
+ * print to be identical to a normal webpage, or adjust it to better suit
+ * your design and requirements. For example this only removes a sub-set of
+ * regions, all others will print.
+ ========================================================================== */
+@media print {
+  * {
+    background: transparent !important;
+    box-shadow: none;
+    text-shadow: none;
+    color: #000;
+    /* Black prints faster: h5bp.com/s */
+  }
+
+  html,
+  body,
+  .l-rw,
+  .pr-main .l-r--content,
+  .block-main-content,
+  article {
+    width: 100% !important;
+    padding: 0;
+    margin: 0;
+  }
+
+  .pr-main .l-r--content,
+  .block-main-content {
+    float: none;
+  }
+
+  [id*="toolbar-"],
+  [class*="_sidebar-"],
+  .pr-navbar,
+  .l-rw-navbar,
+  .l-r--page-top,
+  .l-r--page-bottom,
+  .pr-temporary-tabs,
+  .node__footer,
+  .comment-form-wrapper,
+  .links,
+  .contextual,
+  .tabs,
+  .feed-icons {
+    display: none !important;
+    width: 0;
+    height: 0;
+    float: none;
+  }
+
+  .node--view-mode-teaser {
+    border-bottom: 1px dotted silver;
+    margin-bottom: 1em;
+  }
+
+  a,
+  a:visited {
+    text-decoration: underline;
+    color: #0066cc !important;
+  }
+
+  .site-branding a,
+  .node__title a {
+    text-decoration: none;
+  }
+
+  .menu a {
+    padding: 0 16px 7px 0;
+    padding: 0 1rem 0.43162rem 0;
+  }
+
+  [dir="rtl"] .menu a {
+    padding: 0 0 7px 16px;
+    padding: 0 0 0.43162rem 1rem;
+  }
+
+  /* Don't show links for images, or javascript/internal links */
+  .ir a:after,
+  a[href^="javascript:"]:after,
+  a[href^="#"]:after {
+    content: "";
+  }
+
+  pre,
+  code,
+  img,
+  svg,
+  tr,
+  blockquote {
+    page-break-inside: avoid;
+  }
+
+  thead {
+    display: table-header-group;
+    /* h5bp.com/t */
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  @page {
+    margin: 0.5cm;
+  }
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h1,
+  h2 {
+    page-break-after: avoid;
+  }
+}
+/**
+ * Toolbar
+ * Drupal core does a poor job of protecting the toolbar items, so we isolate
+ * and override the CSS. The ID should be enough specificity to do the job.
+ * This is not exhaustive, the toolbar can still break, however this gets
+ * most "very easily broken" things protected from normal theme styles.
+ ========================================================================== */
+#toolbar-administration a {
+  font-family: 'Source Sans Pro', 'Lucida Grande', Verdana, sans-serif;
+  line-height: 1;
+}
+#toolbar-administration a:after {
+  display: none !important;
+}
+#toolbar-administration button {
+  box-shadow: none;
+  text-shadow: none;
+}
+#toolbar-administration .toolbar-menu-administration ul {
+  padding: 0;
+}
+#toolbar-administration .toolbar-menu-administration a {
+  color: #434343;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  border: 0;
+}
+#toolbar-administration .level-3 ul {
+  padding-left: 1em;
+}
+#toolbar-administration .toolbar-tray-horizontal a {
+  padding-right: 1em;
+}
+
+/*# sourceMappingURL=base.css.map */

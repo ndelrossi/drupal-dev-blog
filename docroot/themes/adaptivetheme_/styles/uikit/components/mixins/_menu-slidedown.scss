@@ -1,0 +1,48 @@
+//
+// Slidedown
+//
+// Do NOT @include into a selector, these must apply to the body element (looks like this can be changed so we don't need to rely in the body selector?)
+//
+// Simple hamburger menu that slides vertically downwards. Pushes and reflows
+// the content below by default. You could set this to postion absolute and
+// style like an overlay (no reflow or pushing etc).
+//
+
+@mixin slidedown($arrows: false) {
+
+  .ms-slidedown {
+
+    .rm-toggle {
+      //float: #{$flow-from};
+      margin-#{$flow-from}: 0;
+      padding-#{$flow-from}: 0;
+
+      &:after {
+        font-family: $icon-font;
+        content: $menu-hamburger;
+        @include output-rhythm(width, $medium);
+        @include output-rhythm(padding-left, $xx-small);
+      }
+    }
+
+    .rm-block__content {
+      display: none;
+      clear: both;
+      opacity: 0.001;
+      transition: $transition_global;
+
+      .menu a {
+        @include output-rhythm(margin-bottom, 3px);
+        @include output-rhythm(padding, $xx-small);
+      }
+    }
+
+    &.rm-is-open {
+      .rm-block__content {
+        display: block;
+        opacity: 1;
+        @include output-rhythm(padding, 0 0 $xx-small);
+      }
+    }
+  }
+}

@@ -1,0 +1,99 @@
+/**
+ * List Styles
+ ========================================================================== */
+
+// Links inline, e.g. node and comment "links".
+ul {
+  &.inline,
+  &.links.inline {
+    padding: 0;
+    @include clearfix-micro;
+  }
+
+  &.inline {
+    @include list-horizontal($flow-to, $margin: (t: 0, r: 0, b: 0, l: $medium));
+
+    a {
+      &:hover,
+      &:focus {}
+    }
+
+    [dir="rtl"] & li {
+      margin: 0 $medium 0 0;
+    }
+  }
+}
+
+
+// Item lists are frequently used in Drupal by Views and
+// other modules that need to output a list of something,
+// sometimes with a title. We zero everything else as a
+// reset since item-lists are not usually bulletted etc.
+.item-list {
+
+  .title {}
+
+  ul,
+  ol,
+  li {
+    list-style: none;
+  }
+
+  a {
+    &:hover,
+    &:focus {}
+  }
+}
+
+
+// Simple horizontal list, see: mixins/_list.scss.
+.list-horizontal {
+  @include list-horizontal($flow-from);
+}
+
+
+// Simple horizontal list, see: mixins/_list.scss.
+.list-multicolumn {
+  padding: 0;
+  @include no-bullets;
+  @include clearfix-micro;
+
+  > li {
+    font-weight: $font-weight-bold;
+  }
+
+  ul, ol {
+    font-weight: $font-weight-normal;
+    padding: 0;
+  }
+}
+
+@media #{$mobile} {
+  @include list-multicolumn('.list-multicolumn', 12em);
+}
+
+
+// Horizontal description lists, adjust the media query to suit.
+@media #{$mobile} {
+  .dl-horizontal {
+    dt {
+      float: $flow-from;
+      clear: $flow-from;
+      text-align: $flow-from;
+      width: 11em;
+
+      &:after {
+        content: ":";
+      }
+    }
+    dd {
+      margin-#{$flow-from}: 12em;
+      @include cf;
+    }
+  }
+}
+
+
+
+
+

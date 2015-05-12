@@ -1,0 +1,15 @@
+id: adaptivetheme__footer
+theme: adaptivetheme_
+weight: 0
+status: true
+langcode: en
+region: footer
+plugin: 'system_menu_block:footer'
+settings:
+  label: 'Footer menu'
+  provider: system
+  label_display: 0
+  level: 1
+  depth: 0
+  cache:
+    max_age: -1

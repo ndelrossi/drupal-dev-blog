@@ -1,0 +1,40 @@
+//
+// Basic horizontal menu. This will hide all submenus no matter what, it has the advantage
+// over the drop menu of not requiring a width on menu items or arrows etc.
+// Like most mixins in the UIKit you can and should hack the mixin to suit your design.
+//
+@mixin horizontal($arrows: false) {
+
+  .ms-horizontal {
+
+    .rm-toggle {
+      @include visually-hidden;
+    }
+
+    .rm-block__content {
+      .menu {
+        @include clearfix-micro;
+      }
+
+      @include list-horizontal($flow-from, $margin: (t: 0, r: 0, b: 0, l: 0), $list-item-selector: '.menu-item');
+
+      .menu-item {
+        a:after {
+          content: '';
+          display: none;
+        }
+
+        @if $arrows == true {
+          &.expanded > a:after {
+            content: $menu-arrow-down;
+          }
+
+          &.collapsed > a:after {
+            content: '';
+          }
+        }
+      }
+    }
+  }
+}
+

@@ -1,0 +1,120 @@
+# Base loads common styles for most Drupal sites.
+base:
+  version: 8.x-1.0
+  css:
+    component:
+      styles/css/components/base.css: {}
+
+# Book
+book:
+  version: 8.x-1.0
+  css:
+    component:
+      styles/css/components/book.css: {}
+
+# Comment
+comment:
+  version: 8.x-1.0
+  css:
+    component:
+      styles/css/components/comments.css: {}
+
+# Forum
+forum:
+  version: 8.x-1.0
+  css:
+    component:
+      styles/css/components/forum.css: {}
+
+# Responsive Menus
+responsive_menus:
+  version: 8.x-1.0
+  css:
+    component:
+      styles/css/components/responsive-menus.css: {}
+  dependencies:
+    - at_core/at.responsivemenus
+
+# Search
+search:
+  version: 8.x-1.0
+  css:
+    component:
+      styles/css/components/search.css: {}
+
+# Taxonomy
+taxonomy:
+  version: 8.x-1.0
+  css:
+    component:
+      styles/css/components/taxonomy.css: {}
+
+# Color
+color:
+  version: 8.x-1.0
+  css:
+    theme:
+      styles/css/components/color.css: {}
+
+# Shortcodes
+shortcodes:
+  version: 8.x-1.0
+  css:
+    theme:
+      styles/css/components/shortcodes.css: {}
+
+# Slideshow
+slideshow_styles:
+  version: 8.x-1.0
+  css:
+    theme:
+      styles/css/components/slideshows.css: {}
+
+# Form Layout Widget CSS, do not use this in the front end, its only
+# for the layout theme settings.
+layout_settings:
+  version: 8.x-1.0
+  css:
+    theme:
+      layout/site-builder/css/site-builder-form.css: {} # You probably need to change this if your theme uses a different layout plugin, i.e. you built your own.
+
+#
+# Generated File Libraries, do not delete these if you are using Extension settings!
+#
+
+# File to show the grid for debugging.
+show_grid:
+  version: 8.x-1.0
+  css:
+    theme:
+      styles/css/show-grid.css: {}
+
+fonts:
+  version: 8.x-1.0
+  css:
+    theme:
+      styles/css/generated/fonts.css: {}
+
+title_styles:
+  version: 8.x-1.0
+  css:
+    theme:
+      styles/css/generated/title-styles.css: {}
+
+login_block:
+  version: 8.x-1.0
+  css:
+    theme:
+      styles/css/generated/login-block.css: {}
+
+custom_css:
+  version: 8.x-1.0
+  css:
+    theme:
+      styles/css/generated/custom-css.css: {}
+
+breadcrumb:
+  version: 8.x-1.0
+  css:
+    theme:
+      styles/css/generated/breadcrumb.css: {}

@@ -1,0 +1,129 @@
+/**
+ * Pagers
+ * - Full system pager.
+ * - Views mini pager.
+ ========================================================================== */
+
+// <nav> element wrapper.
+.pager {
+  @include output-rhythm(margin, $medium 0);
+}
+
+
+// The regular system pager, e.g. used by default pager for the front page view.
+.pager--full {}
+
+
+// The Views mini-pager, e.g. used by default for taxonomy term page views.
+.pager--mini {}
+
+
+// pager_items is a <ul> list
+.pager__items {
+  padding: 0;
+  @include clearfix-micro;
+
+  @media #{$wide} {
+    margin-left: auto;
+    margin-right: auto;
+    display: table;
+  }
+}
+
+// pager_item element classes are all on the <li> items.
+// 1px margin to negate touch errors.
+@include list-horizontal($flow-from, $margin: (t: 1px, r: 1px, b: 1px, l: 1px), $list_item_selector: '.pager__item');
+
+.pager__item {
+  @media #{$mobile} {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+
+// Active or "current" list item.
+.pager__item.is-active {}
+
+
+// Pager links are either an <a>, or a <span> for the current item in the Views mini-pager.
+.pager__link {
+  display: block;
+  border: $border-width $border-style;
+  border-radius: $border-radius;
+  transition: background-color, .15s, ease-in-out;
+
+  &:focus,
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+
+// Global padding for all pager links (anchors).
+.pager__link {
+  @include output-rhythm(padding, 2px $small 0);
+}
+
+
+// Active or "current" link.
+.pager__link--is-active {}
+
+
+// List item for the word "First"
+.pager__item--first {}
+
+
+// List item for the word "Previous"
+.pager__item--previous {}
+
+
+// List item for the word "Next"
+.pager__item--next {
+  @media #{$mobile} {
+    clear: both;
+  }
+}
+
+// List item for the word "Last"
+.pager__item--last {}
+
+
+// Each numeric pager item has this class.
+.pager__item--num {
+  @media #{$mobile} {
+    width: auto;
+  }
+}
+
+
+// First and last classes for numeric pager items.
+.pager__item--num-first {
+  @media #{$mobile} {
+    clear: both;
+  }
+}
+.pager__item--num-last {}
+
+
+// Pager ellipsis appear when there are more pages than display in the pager.
+// Set on a span tag that wraps the ellipsis.
+.pager__ellipsis {}
+
+
+// Ellipsis are showing before the first numeric item.
+// E.g. first previous ...2 3 4 next last
+.pager__ellipsis--before {}
+
+
+// Ellipsis are showing after the last numeric item.
+// E.g. 1 2 3... next last
+.pager__ellipsis--after {}
+
+
+
+
+
+
+
+

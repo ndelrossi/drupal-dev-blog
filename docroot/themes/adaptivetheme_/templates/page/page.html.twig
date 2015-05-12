@@ -1,0 +1,77 @@
+{#
+/**
+ * site-builder for the page template.
+ * Generated on: Fri, 23 Jan 15 17:41:00 +0100
+ */
+#}
+{# No template file found - template code programmatically generated. #}
+<div{{ attributes }}>
+  {# Remove messages variable when https://www.drupal.org/node/2289917 lands. #}
+  {{ messages }}
+  {% if messages__regions.active == true %}
+  <div class="l-pr page__row pr-messages" id="messages">
+    <div{{ messages__attributes }}>
+      {{ page.messages }}
+    </div>
+  </div>
+  {% endif %}
+  {% if leaderboard__regions.active == true %}
+  <div class="l-pr page__row pr-leaderboard" id="leaderboard">
+    <div{{ leaderboard__attributes }}>
+      {{ page.leaderboard }}
+    </div>
+  </div>
+  {% endif %}
+  {% if header__regions.active == true %}
+  <header class="l-pr page__row pr-header" id="masthead" role="banner">
+    <div{{ header__attributes }}>
+      {{ page.header_first }}
+      {{ page.header_second }}
+    </div>
+  </header>
+  {% endif %}
+  {% if navbar__regions.active == true %}
+  <div class="l-pr page__row pr-navbar" id="navbar">
+    <div{{ navbar__attributes }}>
+      {{ page.navbar }}
+    </div>
+  </div>
+  {% endif %}
+  {% if features__regions.active == true %}
+  <div class="l-pr page__row pr-features" id="features">
+    <div{{ features__attributes }}>
+      {{ page.features_first }}
+      {{ page.features_second }}
+      {{ page.features_third }}
+    </div>
+  </div>
+  {% endif %}
+  {% if tabs %}<div class="pr-temporary-tabs l-pr"><div class="l-rw regions">{{ tabs }}</div></div>{% endif %}
+  {% if main__regions.active == true %}
+  <div class="l-pr page__row pr-main" id="main-content">
+    <div{{ main__attributes }}>
+      {{ page.content }}
+      {{ page.sidebar_first }}
+      {{ page.sidebar_second }}
+    </div>
+  </div>
+  {% endif %}
+  {% if subfeatures__regions.active == true %}
+  <div class="l-pr page__row pr-subfeatures" id="sub-features">
+    <div{{ subfeatures__attributes }}>
+      {{ page.subfeatures_first }}
+      {{ page.subfeatures_second }}
+      {{ page.subfeatures_third }}
+      {{ page.subfeatures_fourth }}
+    </div>
+  </div>
+  {% endif %}
+  {% if footer__regions.active == true %}
+  <footer class="l-pr page__row pr-footer" id="footer" role="contentinfo">
+    <div{{ footer__attributes }}>
+      {{ page.footer }}
+    </div>
+  </footer>
+  {% endif %}
+  {{ attribution }}
+</div>

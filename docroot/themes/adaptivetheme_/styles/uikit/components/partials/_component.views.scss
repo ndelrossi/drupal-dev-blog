@@ -1,0 +1,25 @@
+/**
+ * Views
+ ========================================================================== */
+
+.view {}
+
+.views-row {}
+
+.views-view-grid  {
+  .views-col {
+    @include output-rhythm(padding-#{$flow-to}, $large);
+    @include output-rhythm(margin-bottom, $large);
+
+    box-sizing: border-box;
+
+    &:last-child {
+      padding-#{$flow-to}: 0;
+    }
+  }
+}
+
+
+// List all views pages/blocks in core for reference until its decided on what/where they go.
+.view-frontpage {}
+.view-taxonomy-term {}

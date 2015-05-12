@@ -1,0 +1,16 @@
+id: adaptivetheme__branding
+theme: adaptivetheme_
+weight: 0
+status: true
+langcode: en
+region: header_first
+plugin: system_branding_block
+settings:
+  label: 'Page Site Branding'
+  provider: system
+  label_display: 0
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: true
+  cache:
+    max_age: -1

@@ -272,7 +272,7 @@ $config_directories = array();
  *   $settings['hash_salt'] = file_get_contents('/home/example/salt.txt');
  * @endcode
  */
-$settings['hash_salt'] = '';
+$settings['hash_salt'] = 'GzUmcJiOLAA7P9NmSkZIu0hYaNzAgb7zHgO0jDW7REWRlbsyRbyKTB1aRtBSTamnwq5amroQkA';
 
 /**
  * Access control for update.php script.
@@ -658,3 +658,16 @@ $settings['container_yamls'][] = __DIR__ . '/services.yml';
 if (file_exists('/var/www/site-php')) {
   require('/var/www/site-php/nickdelrossi/nickdelrossi-settings.inc');
 }
+$databases['default']['default'] = array (
+  'database' => 'nickdelrossi',
+  'username' => 'nickwtf',
+  'password' => 'biggestlie12',
+  'prefix' => '',
+  'host' => 'localhost',
+  'port' => '3306',
+  'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
+  'driver' => 'mysql',
+);
+$settings['install_profile'] = 'standard';
+$config_directories['active'] = 'sites/default/files/config_qUNFiiXgFw-XEcq8WOIDzAMJG1rdlRky8bpZPktATDP8bFNrWoE5fOuX4J1dwwlgbwZfxvDrFg/active';
+$config_directories['staging'] = 'sites/default/files/config_qUNFiiXgFw-XEcq8WOIDzAMJG1rdlRky8bpZPktATDP8bFNrWoE5fOuX4J1dwwlgbwZfxvDrFg/staging';

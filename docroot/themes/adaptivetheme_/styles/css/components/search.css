@@ -1,0 +1,119 @@
+/**
+ * Search results pages
+ ========================================================================== */
+.search-results {
+  margin-bottom: 16px;
+  margin-bottom: 1rem;
+  padding: 16px;
+  padding: 1rem;
+  border-radius: 2px;
+}
+.search-results li {
+  margin-bottom: 18px;
+  margin-bottom: 1.13rem;
+  padding: 0;
+}
+
+.search-result p {
+  margin: 0;
+}
+
+.search-result__title {
+  margin: 0;
+}
+
+.search-result__info {
+  font-size: 11px;
+  font-size: 0.69838rem;
+  line-height: 18px;
+  line-height: 1.125rem;
+}
+
+/**
+ * Search forms
+ * - search block form
+ * - advanced search form
+ ========================================================================== */
+.block-search {
+  display: block;
+  clear: both;
+}
+.block-search form {
+  position: relative;
+}
+.block-search .form-type-search,
+.block-search .form-actions {
+  display: inline;
+  margin: 0 0 7px;
+  margin: 0 0 0.43162rem;
+}
+.block-search .form-search {
+  width: 100%;
+  padding-right: 35px;
+  padding-right: 2.1875rem;
+}
+.block-search .form-actions {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+}
+.block-search .form-submit {
+  margin: 0;
+  padding: 0;
+  width: 32px;
+  width: 2rem;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  font: 0/0 a;
+  text-shadow: none;
+  color: transparent;
+  cursor: pointer;
+  background-image: url(../images/search-icon.svg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  border-radius: 0 2px 2px 0;
+}
+.block-search .contextual-render-processed {
+  top: 2px;
+  right: 2em;
+}
+
+.search-basic {
+  display: block;
+}
+.search-basic label {
+  display: block;
+  margin: 0 0 7px;
+  margin: 0 0 0.43162rem;
+}
+.search-basic .form-type-search,
+.search-basic .form-search {
+  display: block;
+  width: 100%;
+  margin: 7px 0;
+  margin: 0.43162rem 0;
+}
+
+.search-advanced .details-wrapper > fieldset > legend {
+  position: absolute !important;
+  clip: rect(1px, 1px, 1px, 1px);
+  overflow: hidden;
+  height: 1px;
+  width: 1px;
+  padding: 0;
+  word-wrap: normal;
+  font: 0/0 a;
+}
+.search-advanced .form-text {
+  min-width: 75%;
+}
+.search-advanced .form-item,
+.search-advanced .form-radios,
+.search-advanced .form-checkboxes {
+  margin-bottom: 7px;
+  margin-bottom: 0.43162rem;
+}
+
+/*# sourceMappingURL=search.css.map */

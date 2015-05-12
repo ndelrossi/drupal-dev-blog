@@ -1,0 +1,46 @@
+/**
+ * Tabs (local tasks)
+ * TODO: fix selectors when https://www.drupal.org/node/507488 lands. This will
+ * mean the tabs are now a block, and we probably need some template revisions
+ * also.
+ ========================================================================== */
+
+.tabs {
+  margin: 0;
+  padding: 0;
+}
+
+// Fix and repair when local tasks become a block.
+.pr-temporary-tabs {
+
+  .local-tasks {
+    @include output-rhythm(margin-bottom, $medium);
+  }
+
+  // Temp solution until tabs become a block...
+  .l-rw {
+    @include output-rhythm(padding, $x-large $medium 0);
+  }
+
+  ul {
+    @include clearfix-micro;
+
+    &.tabs--primary {
+      margin-bottom: 0;
+    }
+  }
+
+
+
+  // Here we call mixins that automagically apply styles to list items.
+  @media #{$mobile} {
+    @include list-style-button-group-vertical('ul.tabs--primary');
+    @include list-style-seven-vertical('ul.tabs--secondary');
+  }
+
+  @media #{$wide} {
+    @include list-style-tab-group('ul.tabs--primary');
+    @include list-style-seven-horizontal('ul.tabs--secondary');
+  }
+}
+

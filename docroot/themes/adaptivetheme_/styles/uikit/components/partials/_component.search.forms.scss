@@ -1,0 +1,109 @@
+/**
+ * Search forms
+ * - search block form
+ * - advanced search form
+ ========================================================================== */
+
+// Search Block form.
+.block-search {
+
+  // Mitigate any template inheritance failure which might have container
+  // inline set on the block.
+  display: block;
+  clear: both;
+
+  form {
+    position: relative;
+  }
+
+ .form-type-search,
+ .form-actions {
+    display: inline;
+    @include output-rhythm(margin, 0 0 $xx-small);
+  }
+
+ .form-search {
+    width: 100%;
+    @include output-rhythm(padding-#{$flow-to}, 35px);
+  }
+
+  .form-actions {
+    position: absolute;
+    top: 0;
+    #{$flow-to}: 0;
+    z-index: 1;
+  }
+
+  // Search block input sumbit text removed, uses an SVG
+  // icon instead.
+  .form-submit {
+    margin: 0;
+    padding: 0;
+    @include output-rhythm(width, 32px);
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    font: 0/0 a;
+    text-shadow: none;
+    color: transparent;
+    cursor: pointer;
+    background-image: url(../images/search-icon.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    border-radius: 0 $border-radius $border-radius 0; // LTR
+  }
+
+  // The contextual links trigger can obsure the search submit input.
+  .contextual-render-processed {
+    //display: none;
+    top: 2px;
+    #{$flow-to}: 2em;
+  }
+}
+
+
+// Search Page form.
+.search-page-form {}
+
+// Basic search.
+.search-basic {
+  display: block;
+
+  label {
+    display: block;
+    @include output-rhythm(margin, 0 0 $xx-small);
+  }
+
+  .form-type-search,
+  .form-search {
+    display: block;
+    width: 100%;
+    @include output-rhythm(margin, $xx-small 0);
+  }
+}
+
+// Advanced search.
+.search-advanced {
+  .details-wrapper {
+    // Hide visually redundant legends. This must be very specific so as not to remove
+    // required legends as well, hence the child selectors and over-specification.
+    > fieldset > legend {
+      @include visually-hidden;
+    }
+  }
+
+  .form-text {
+    min-width: 75%;
+  }
+
+  .form-item,
+  .form-radios,
+  .form-checkboxes {
+    @include output-rhythm(margin-bottom, $xx-small);
+  }
+}
+
+
+
+
+

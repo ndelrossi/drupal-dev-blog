@@ -1,0 +1,288 @@
+/**
+ * Shortcodes
+ * Styles applied via AT Extension "Shortcodes", small snippets of CSS
+ * applied using classes added to various components via the appearance
+ * user interface (Appearance settings).
+ ========================================================================== */
+
+.ta-center,
+.ta-center * {
+  text-align: center;
+}
+
+.ta-left,
+.ta-left * {
+  text-align: left;
+}
+
+.ta-right,
+.ta-right * {
+  text-align: right;
+}
+
+.ta-justify
+.ta-justify * {
+  text-align: justify;
+}
+
+.center-element {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+// Layout columns and pull classes
+@media #{$mobile} {
+
+  .pull-right,
+  [dir="rtl"] .pull-left {
+    float: right;
+  }
+
+  .pull-left,
+  [dir="rtl"] .pull-right {
+    float: left;
+  }
+
+  .lc-quarter {
+    width: 25%;
+  }
+
+  .lc-half {
+    width: 50%;
+  }
+
+  .lc-three-quarters {
+    width: 75%;
+  }
+
+  .lc-third {
+    width: 33.3334%;
+  }
+
+  .lc-two-thirds {
+    width: 66.6667%;
+  }
+}
+
+
+// Whitespace control
+.spaceless {
+  margin: 0;
+  padding: 0;
+  max-width: none;
+  max-height: none;
+}
+
+.rm-padding {
+  padding: 0;
+}
+
+.rm-padding-top {
+  padding-top: 0;
+}
+
+.rm-padding-bottom {
+  padding-bottom: 0;
+}
+
+.rm-padding-right {
+  padding-right: 0;
+}
+
+.rm-padding-left {
+  padding-left: 0;
+}
+
+.rm-margin {
+  margin: 0;
+}
+
+.rm-margin-top {
+  margin-top: 0;
+}
+
+.rm-margin-bottom {
+  margin-bottom: 0;
+}
+
+.rm-margin-right {
+  margin-right: 0;
+}
+
+.rm-margin-left {
+  margin-left: 0;
+}
+
+
+// Grid blocks
+@media #{$mobile} {
+
+  .grid-block-2 {
+    .block {
+      @include gallery(6 of 12);
+    }
+  }
+
+  .grid-block-3 {
+    .block {
+      @include gallery(4 of 12);
+    }
+  }
+
+  .grid-block-4 {
+    .block {
+      @include gallery(3 of 12);
+    }
+  }
+
+  .grid-block-6 {
+    .block {
+      @include gallery(2 of 12);
+    }
+  }
+
+  .grid-block-12 {
+    .block {
+      @include gallery(1 of 12);
+    }
+  }
+}
+
+
+// Rounded corners
+@mixin rounded-corners($radius) {
+  border-radius: $radius;
+
+  [class*="__title"],
+  .node .field-type-image__figure.caption {
+    border-radius: $radius $radius 0 0;
+  }
+
+  .node .field-type-image__figcaption {
+    border-radius: 0 0 $radius $radius;
+  }
+
+  .block, // this allows the class to be set on a region.
+  .node--view-mode-teaser, // node teaser have a border
+  .node .field-type-image__figure, // border on image fields in nodes
+  input,
+  .button,
+  textarea,
+  select {
+    border-radius: $radius;
+  }
+}
+
+.rc-2 {
+  @include rounded-corners(2px);
+}
+.rc-3 {
+  @include rounded-corners(3px);
+}
+.rc-4 {
+  @include rounded-corners(4px);
+}
+.rc-5 {
+  @include rounded-corners(5px);
+}
+.rc-6 {
+  @include rounded-corners(6px);
+}
+.rc-7 {
+  @include rounded-corners(7px);
+}
+.rc-8 {
+  @include rounded-corners(8px);
+}
+.rc-9 {
+  @include rounded-corners(9px);
+}
+.rc-10 {
+  @include rounded-corners(10px);
+}
+.rc-12 {
+  @include rounded-corners(12px);
+}
+.rc-15 {
+  @include rounded-corners(15px);
+}
+.rc-20 {
+  @include rounded-corners(20px);
+}
+
+
+// Menu bullets.
+@mixin menu-bullets($bullet-closed, $bullet-open, $bullet-closed-rtl) {
+  .menu {
+    li {
+      &.collapsed > a:after {
+        content: $bullet-closed; // LTR
+      }
+
+      &.expanded > a:after {
+        content: $bullet-open ;
+      }
+    }
+
+    // RTL
+    [dir="rtl"] & {
+      li.collapsed > a:after {
+        content: $bullet-closed-rtl;
+      }
+    }
+  }
+}
+// fat arrows
+.fa-arrow {
+  @include menu-bullets($fa-var-arrow-left, $fa-var-arrow-down, $fa-var-arrow-left);
+}
+// caret
+.fa-caret {
+  @include menu-bullets($fa-var-caret-left, $fa-var-caret-down, $fa-var-caret-left);
+}
+// double angle
+.fa-angle-double {
+  @include menu-bullets($fa-var-angle-double-left, $fa-var-angle-double-down, $fa-var-angle-double-left);
+}
+// chevron
+.fa-chevron {
+  @include menu-bullets($fa-var-chevron-left, $fa-var-chevron-down, $fa-var-chevron-left);
+}
+
+// We must special case drop menus
+@mixin ms-dropmenu-bullets($bullet-down, $bullet-right) {
+  .rm-block__content .menu-level-1 li.expanded > a:after,
+  .rm-block__content .odd ul .odd > .expanded > a:after {
+    content: $bullet-down;
+  }
+  .rm-block__content .odd ul > .expanded > a:after,
+  .rm-block__content .odd ul > .collapsed > a:after {
+    content: $bullet-right;
+  }
+}
+
+.ms-dropmenu {
+  .fa-arrow {
+    @include ms-dropmenu-bullets($fa-var-arrow-down, $fa-var-arrow-right);
+  }
+  .fa-caret {
+    @include ms-dropmenu-bullets($fa-var-caret-down, $fa-var-caret-right);
+  }
+  .fa-angle-double {
+    @include ms-dropmenu-bullets($fa-var-angle-double-down, $fa-var-angle-double-right);
+  }
+  .fa-chevron {
+    @include ms-dropmenu-bullets($fa-var-chevron-down, $fa-var-chevron-right);
+  }
+}
+
+
+// Patterns
+@if $patterns {
+ @each $pattern in $patterns {
+    .pattern-#{$pattern} {
+      @include page-row-pattern-overlay('../images/patterns/#{$pattern}.png', $page-row-fullwidth);
+    }
+  }
+}

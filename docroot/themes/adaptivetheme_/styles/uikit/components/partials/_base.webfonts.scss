@@ -1,0 +1,62 @@
+/**
+ * Webfonts
+ ========================================================================== */
+
+/**
+ * Font Awesome - http://fortawesome.github.io
+ *
+ * To find all icon codes see the Font Awesome cheatsheet -
+ * http://fortawesome.github.io/Font-Awesome/cheatsheet/
+ *
+ * AT does not import all of fontawesome, only what we need to support more
+ * recent browsers:
+ *  - woff: Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+, Android 4.4+
+ *  - ttf: Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5, Android
+ *
+ * Installing local fonts:
+ *
+ * NOTE: due to licencing restrictions imposed by Drupal.org we must load
+ * the font files from a CDN. It is recommended you install the font files
+ * locally on your server (in your theme) and link to those instead.
+ *
+ * To install locally:
+
+ * First download FontAwesome from Github (link above), check the version
+ * this theme shipped with ($fa-version) or view the generated CSS and look
+ * for the cache identifier string at the end of the font file path, e.g.
+ * "?v=4.3.0". You need to download the version this theme shipped with or
+ * newer.
+ *
+ * Next create the directory: "styles/css/fonts", then place the .woff
+ * and .ttf files in the "fonts" directory.
+ *
+ * If you are using SASS you can uncomment the $fa-font-path !default
+ * in uikit > components > font-awesome > _variables.scss and comment
+ * out the Bootstrap CDN path. Amend the
+ *
+ * If you are using CSS directly, just edit the path manually to point to
+ * the files, e.g.:
+ * src: url("../fonts/fontawesome-webfont.woff")
+*/
+@font-face {
+  font-family: 'FontAwesome';
+  src:
+    url('#{$fa-font-path}/fontawesome-webfont.woff?v=#{$fa-version}') format('woff'),
+    url('#{$fa-font-path}/fontawesome-webfont.ttf?v=#{$fa-version}') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+// Typekit
+// http://help.typekit.com/customer/portal/articles/6852
+// Typically you probably don't need to worry about this because on most
+// AT Themes there are default fallback fonts already set globally and AT
+// will use the .wf-active selector in all styles set in Appearance settings
+// that use Typekit fonts.
+// styles to use before Typekit is loaded
+.wf-loading {
+}
+
+// styles to use after Typekit is loaded
+.wf-active {
+}

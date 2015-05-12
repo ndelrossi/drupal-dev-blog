@@ -1,0 +1,14 @@
+id: adaptivetheme__help
+theme: adaptivetheme_
+weight: 0
+status: false
+langcode: en
+region: messages
+plugin: system_help_block
+settings:
+  label: 'System Help'
+  id: system_help_block
+  provider: system
+  label_display: 0
+  cache:
+    max_age: -1

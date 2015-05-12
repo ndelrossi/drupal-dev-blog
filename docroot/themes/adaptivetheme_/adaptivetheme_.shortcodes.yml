@@ -1,0 +1,191 @@
+textalign:
+  name: 'Text Align'
+  description: ''
+  classes:
+    text_align_center:
+      class: ta-center
+      description: 'Align text centered.'
+    text_align_left:
+      class: ta-left
+      description: 'Align text left.'
+    text_align_right:
+      class: ta-right
+      description: 'Align text right.'
+    text_align_justify:
+      class: ta-justify
+      description: 'Align text justified.'
+
+position:
+  name: Positioning
+  description: 'Float elements left or right. Do not use on Page rows or regions (you will break the layout).'
+  classes:
+    pull_left:
+      class: pull-left
+      description: 'Float element left.'
+    pull_right:
+      class: pull-right
+      description: 'Float element right.'
+    centered:
+      class: center-element
+      description: 'Center the element horizontally. Combine with a layout-column to add a width.'
+
+layout:
+  name: 'Layout columns'
+  description: 'Set a width on an element. Do not use on Page rows or regions (you will break the layout). These are most useful or blocks or other elements within the page (for example you can apply these to elements in a node). All layout-column classes are full width in mobile, which is determined by your theme.'
+  classes:
+    layout-column-quarter:
+      class: lc-quarter
+      description: 'Element will be one quarter the container width.'
+    layout-column-half:
+      class: lc-half
+      description: 'Element will be one half the container width.'
+    layout-column-three-quarters:
+      class: lc-three-quarters
+      description: 'Element will be three quarters the container width.'
+    layout-column-third:
+      class: lc-third
+      description: 'Element will be one third the container width.'
+    layout-column-two-thirds:
+      class: lc-two-thirds
+      description: 'Element will be two thirds the container width.'
+
+whitespace:
+  name: 'Whitespace control'
+  description: 'Remove padding and margin. Useful if you want a containers contents to fill the entire container, e.g. remove block and region margin and padding.'
+  elements:
+    - blocks
+    - regions
+    - rows
+  classes:
+    spaceless:
+      class: spaceless
+      description: 'Remove all padding and margin from all wrappers. Use with caution, e.g. rows use margin auto for centering.'
+    remove-padding:
+      class: rm-padding
+      description: 'Remove padding.'
+    remove-padding-top:
+      class: rm-padding-top
+      description: 'Remove top padding.'
+    remove-padding-bottom:
+      class: rm-padding-bottom
+      description: 'Remove bottom padding.'
+    remove-padding-right:
+      class: rm-padding-right
+      description: 'Remove right padding.'
+    remove-padding-left:
+      class: rm-padding-left
+      description: 'Remove left padding.'
+    remove-margin:
+      class: rm-margin
+      description: 'Remove margin.'
+    remove-margin-top:
+      class: rm-margin-top
+      description: 'Remove top margin.'
+    remove-margin-botom:
+      class: rm-margin-bottom
+      description: 'Remove bottom margin.'
+    remove-margin-right:
+      class: rm-margin-right
+      description: 'Remove right margin.'
+    remove-margin-left:
+      class: rm-margin-left
+      description: 'Remove left margin.'
+
+grid-blocks:
+  name: Block Grid
+  description: 'Layout blocks in a grid. Apply to full width regions only. A good alternative is to build a View with the format "Grid".'
+  classes:
+    grid-block-two:
+      class: 'grid-block-2'
+      description: 'Two grid columns.'
+    grid-block-three:
+      class: 'grid-block-3'
+      description: 'Three grid columns.'
+    grid-block-four:
+      class: 'grid-block-4'
+      description: 'Four grid columns.'
+    grid-block-five:
+      class: 'grid-block-5'
+      description: 'Five grid columns.'
+    grid-block-six:
+      class: 'grid-block-6'
+      description: 'Six grid columns.'
+    grid-block-eight:
+      class: 'grid-block-8'
+      description: 'Eight grid columns.'
+    grid-block-ten:
+      class: 'grid-block-10'
+      description: 'Ten grid columns.'
+    grid-block-twelve:
+      class: 'grid-block-12'
+      description: 'Twelve grid columns.'
+
+rounded-corners:
+  name: 'Rounded Corners'
+  description: 'Add rounded corners (border radius). Rounded corners will automatically apply to form elements, tabs etc depending on your theme (e.g. the search block form). You can set a global border radius on the <code>body</code>, then override it in regions or blocks.'
+  elements:
+    - blocks
+    - regions
+    - body
+  classes:
+    rc-0:
+      class: 'rc-0'
+      description: 'Remove border radius.'
+    rc-1:
+      class: 'rc-1'
+      description: 'Border radius 1px'
+    rc-2:
+      class: 'rc-2'
+      description: 'Border radius 2px'
+    rc-3:
+      class: 'rc-3'
+      description: 'Border radius 3px'
+    rc-4:
+      class: 'rc-4'
+      description: 'Border radius 4px'
+    rc-5:
+      class: 'rc-5'
+      description: 'Border radius 5px'
+    rc-6:
+      class: 'rc-6'
+      description: 'Border radius 6px'
+    rc-7:
+      class: 'rc-7'
+      description: 'Border radius 7px'
+    rc-8:
+      class: 'rc-8'
+      description: 'Border radius 8px'
+    rc-9:
+      class: 'rc-9'
+      description: 'Border radius 9px'
+    rc-10:
+      class: 'rc-10'
+      description: 'Border radius 10px'
+    rc-12:
+      class: 'rc-12'
+      description: 'Border radius 12px'
+    rc-15:
+      class: 'rc-15'
+      description: 'Border radius 15px'
+    rc-20:
+      class: 'rc-20'
+      description: 'Border radius 20px'
+
+menu-bullets:
+  name: 'Menu Bullets'
+  description: 'Add font-icon arrows to collapsed and uncollapsed menu items.'
+  elements:
+    - 'menu blocks'
+  classes:
+    fa-arrow:
+      class: 'fa-arrow'
+      description: 'Simple arrows.'
+    fa-caret:
+      class: 'fa-caret'
+      description: 'Simple carets.'
+    fa-angle-double:
+      class: 'fa-angle-double'
+      description: 'Double angle (default with nothing applied is single angle).'
+    fa-chevron:
+      class: 'fa-chevron'
+      description: 'Chevron.'

@@ -1,0 +1,91 @@
+// Overlay menu postions the toggle in a corner (any), with the menu
+// hidden. When toggled the menu opens in an overlay above the content
+// and fills the whole screen.
+
+@mixin overlay($toggle_position: (vert: top, horz: right), $arrows: false) {
+
+  $vert: map-get($toggle_position, vert);
+  $horz: map-get($toggle_position, horz);
+
+  .ms-overlay {
+
+    .rm-toggle {
+      display: block;
+      position: fixed;
+      padding: 0;
+      z-index: 1000;
+      opacity: 0.5;
+      background: rgba(0, 0, 0, 0.875);
+      @include output-rhythm(#{$vert}, $medium);
+      @include output-rhythm(#{$horz}, $medium);
+
+      span {
+        @include visually-hidden;
+      }
+
+      &:after {
+        font-family: $icon-font;
+        content: $menu-hamburger;
+        display: block;
+        @include output-rhythm(width, $medium);
+        @include output-rhythm(padding, $xx-small $medium);
+      }
+    }
+
+    .rm-block__content {
+      display: none;
+      opacity: .001;
+    }
+
+    &.rm-is-open {
+      .rm-toggle {
+        opacity: 1;
+      }
+
+      .rm-block__content {
+        opacity: 1;
+        display: block;
+        position: absolute;
+        background: rgba(0, 0, 0, 0.875);
+        box-shadow: 0 6px 6px 6px rgba(0, 0, 0, 0.7);
+        z-index: 990;
+
+        @include output-rhythm(top, $medium);
+        @include output-rhythm(bottom, $medium);
+        @include output-rhythm(right, $small);
+        @include output-rhythm(left, $small);
+
+        .menu {
+          background: transparent;
+
+          a,
+          a:hover,
+          a:focus,
+          a.active {
+            background: transparent;
+          }
+
+          a.active {
+            &[href="/"] {
+              background-color: transparent;
+
+              &:hover,
+              &:focus {
+                background: transparent;
+              }
+            }
+          }
+
+          @if $arrows == false {
+            a:after {
+              content: none;
+              display: none;
+            }
+          }
+
+        }
+      }
+    }
+
+  }
+}

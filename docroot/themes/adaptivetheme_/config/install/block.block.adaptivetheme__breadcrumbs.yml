@@ -1,0 +1,13 @@
+id: adaptivetheme__breadcrumbs
+theme: adaptivetheme_
+weight: 0
+status: false
+langcode: en
+region: -1
+plugin: system_breadcrumb_block
+settings:
+  label: 'Breadcrumbs'
+  provider: system
+  label_display: 0
+  cache:
+    max_age: 0
