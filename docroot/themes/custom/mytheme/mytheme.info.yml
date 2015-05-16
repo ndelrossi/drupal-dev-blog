@@ -1,4 +1,4 @@
-name: My Theme
+name: My Theme with Bootstrap
 desciption: 'My Drupal 8 theme'
 base theme: classy
 package: Custom
@@ -7,14 +7,5 @@ version: 1.0
 core: 8.x
 
 libraries:
-  - mytheme/base
   - mytheme/bootstrap
   - mytheme/global-styling
-
-regions:
-  header: Header
-  featured: Featured
-  content: Content
-  sidebar_first: First sidebar
-  sidebar_second: Second sidebar
-  footer: Footer
